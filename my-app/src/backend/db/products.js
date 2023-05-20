@@ -10,7 +10,7 @@ export const products = [
     _id: uuid(),
     name: "Nike Air Max 90",
     brand: "Nike",
-    img: "https://images.vegnonveg.com/resized/400X328/9403/nike-dunk-hi-retro-se-monarchmonarch-sail-6454f1639a713.jpg",
+    image: "https://images.vegnonveg.com/resized/400X328/9403/nike-dunk-hi-retro-se-monarchmonarch-sail-6454f1639a713.jpg",
     original_price: 199,
     discounted_price: 159,
     category_name: "Lifestyle",

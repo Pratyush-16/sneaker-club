@@ -1,22 +1,30 @@
 import React from "react";
+import "./Filter.css"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 export default function Filter() {
   return (
     <div className="main-filter">
       <div className="first-filter">
-        <p>Filter</p>
-        <a>Clear</a>
+        <p>Filters</p>
+        <p>Clear</p>
       </div>
 
       <div className="range-filter">
-        <input type="range" />
+        <input type="range" min="0" max="1000" value="" />
       </div>
 
       <div className="filter-category">
-        <p>Category</p>
+        <p>Category: </p>
+      
+      <select className="categories" >
+      <option value="Running">Running</option>
+      <option value="Lifestyle">Lifestyle</option>
+      <option value="SkateBoarding">SkateBoarding</option>
+      </select>
       </div>
 
-      <label>
+      {/* <label>
         <input type="checkbox" /> Running
       </label>
 
@@ -26,10 +34,17 @@ export default function Filter() {
 
       <label>
         <input type="checkbox" /> Skateboarding
-      </label>
+      </label> */}
 
       <div className="filter-rating">
-        <label>
+      <p>Rating :</p>
+        <select className="ratings">
+          
+          <option value=""> 4.5 & above</option>
+          <option value=""> 4.3 & above</option>
+          <option value="">4.0 & above</option>
+        </select>
+        {/* <label>
           <input type="radio" />4
         </label>
         <label>
@@ -40,19 +55,24 @@ export default function Filter() {
         </label>
         <label>
           <input type="radio" />1
-        </label>
+        </label> */}
       </div>
 
       <div className="filter-sort">
         <p>Sort by</p>
-        <label>
+
+        <select value="sort">
+          <option value="">Low to High</option>
+          <option value="">High to Low</option>
+        </select>
+        {/* <label>
           <input type="radio" />
           Price - Low to High
         </label>
         <label>
           <input type="radio" />
           Price - High to Low
-        </label>
+        </label> */}
       </div>
     </div>
   );

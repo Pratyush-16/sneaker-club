@@ -1,0 +1,13 @@
+.productCard{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+
+}
+
+.shoes-images{
+    height: 300px;
+   width: 350px;
+}

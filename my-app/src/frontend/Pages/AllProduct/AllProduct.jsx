@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import Filter from '../Components/Filters/Filter'
-import { DataContext } from '../Context/DataContext'
+import Filter from '../../Components/Filters/Filter'
+import { DataContext } from '../../Context/DataContext'
 
 export const  AllProduct =()=> {
 
@@ -19,13 +19,13 @@ export const  AllProduct =()=> {
           sneakers ?.map((shoes)=> 
             
               <div key={shoes.id} className="prod-card">
-                <img  src={shoes.image} alt="shoes"/>
+                <img  src={shoes.image} alt="shoes" className='shoes-images'/>
                 <p>{shoes.name}</p>
-                <p>{shoes.rating}</p>
+                <p>Rating: {shoes.rating}</p>
                 
                
               
-              <p>{shoes.original_price }</p>
+              <p>Price :{shoes.original_price }</p>
 
               <p>{shoes. discounted_price}</p>
             
