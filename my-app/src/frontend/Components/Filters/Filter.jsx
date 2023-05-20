@@ -4,14 +4,23 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 export default function Filter() {
   return (
-    <div className="main-filter">
-      <div className="first-filter">
-        <p>Filters</p>
-        <p>Clear</p>
-      </div>
+
+    <fieldset>
+      <legend>
+        Filters
+      </legend>
+
+      <div className="main-filter">
+      
 
       <div className="range-filter">
-        <input type="range" min="0" max="1000" value="" />
+      <p>Price Range: </p>
+      <div>
+        <span>$50</span>
+      <input type="range" min="0" max="1000" value="" />
+      <span>$200</span>
+      </div>
+       
       </div>
 
       <div className="filter-category">
@@ -75,5 +84,8 @@ export default function Filter() {
         </label> */}
       </div>
     </div>
-  );
+  
+
+    </fieldset>
+  )
 }

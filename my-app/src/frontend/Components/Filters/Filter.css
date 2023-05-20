@@ -1,10 +1,30 @@
+fieldset{
+    padding: 1rem;
+    margin: 2rem;
+    width: max-content;
+
+}
+
+legend{
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
 .main-filter{
     display: flex;
     flex-direction: row;
     /* border: 1px solid black; */
+    /* justify-content: space-between; */
+    gap: 2rem;
+    /* justify-content: center;
+} */
 }
-
 .first-filter{
     
+}
+
+select{
+    padding: 0.5rem;
+    width: 150px;
 }
 
