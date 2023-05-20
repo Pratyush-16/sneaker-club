@@ -1,0 +1,26 @@
+footer {
+  background-color: #a5b4fc;
+    padding: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    border-radius: 2rem;
+  }
+  
+  footer p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .col-md-12 {
+    width: 100%;
+  }

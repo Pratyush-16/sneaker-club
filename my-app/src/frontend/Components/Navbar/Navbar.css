@@ -1,0 +1,23 @@
+
+.nav{
+    display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     background-color: #a5b4fc;
+     gap: 2rem;
+     padding: 0 2rem;
+
+  }
+  
+  .second-nav{
+    display: flex;
+    gap: 15px;
+  }
+
+  .search-navbar{
+  
+    padding: 1rem  1.25rem;
+    width: 40vw;
+    border: 0;
+
+  }

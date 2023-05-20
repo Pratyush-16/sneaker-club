@@ -1,0 +1,22 @@
+/* .hero{
+    background-color: aqua;
+    ;
+} */
+
+.hero{
+    position: relative;
+}
+
+.shop-sneaker-btn{
+    position: absolute;
+    top: 35%;
+    left: 5%;
+
+}
+
+
+.hero-text > img{
+    width: 100%;
+    height: 100%;
+}
+
