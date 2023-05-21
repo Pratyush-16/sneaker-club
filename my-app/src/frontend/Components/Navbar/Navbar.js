@@ -3,6 +3,9 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import  {faCartShopping} from "@fortawesome/free-regular-svg-icons"
+//import{ShoppingCartRoundedIcon} from "@mui/icons-material/ShoppingCartRounded"
+//import{FavoriteRoundedIcon} from "@mui/icons-material/FavoriteRounded"
+import {ShoppingCartOutlinedIcon} from '@mui/icons-material/ShoppingCartOutlined';
 
 export const Navbar = () => {
   return (
@@ -24,7 +27,9 @@ export const Navbar = () => {
         <NavLink></NavLink>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/cart">Cart</NavLink>
-        <NavLink to="/wishlist">Wishlist</NavLink>
+        <NavLink to="/wishlist">wishlist </NavLink>
+
+       
       </div>
     </div>
   );
