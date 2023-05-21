@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 //import{ShoppingCartRoundedIcon} from "@mui/icons-material/ShoppingCartRounded"
 //import{FavoriteRoundedIcon} from "@mui/icons-material/FavoriteRounded"
 import {ShoppingCartOutlinedIcon} from '@mui/icons-material/ShoppingCartOutlined';
+import {BsCart2} from "react-icons/bs"
 
 export const Navbar = () => {
   return (
@@ -26,9 +27,10 @@ export const Navbar = () => {
       <div className="second-nav">
         <NavLink></NavLink>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/cart">Cart</NavLink>
+        <NavLink to="/cart"><BsCart2/></NavLink>
         <NavLink to="/wishlist">wishlist </NavLink>
-
+        <NavLink to="/login" >Log In</NavLink>
+        <NavLink to="/signup">SignUp</NavLink>
        
       </div>
     </div>

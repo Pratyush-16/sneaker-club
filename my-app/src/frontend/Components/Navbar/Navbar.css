@@ -3,15 +3,27 @@
     display: flex;
      align-items: center;
      justify-content: space-evenly;
-     background-color: #a5b4fc;
+     background-color: #7a7b81;
      gap: 2rem;
      padding: 0 2rem;
+     position: fixed;
+     z-index: 10;
+     width: 100%;
+     opacity: 90%;
+     
 
   }
   
-  .second-nav{
+  .second-nav {
     display: flex;
     gap: 15px;
+    
+  }
+
+  .second-nav > a{
+    text-decoration: none;
+    color: white;
+
   }
 
   .search-navbar{

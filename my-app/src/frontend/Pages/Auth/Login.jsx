@@ -27,7 +27,10 @@ import "./Login.css"
 
 export const Login = () => {
   return (
+    
+    
     <div className="login-page">
+      <h1>This is Lopgin page</h1>
       <div className="main_login">
         <h1>Sneaker Club</h1>
         <p>Welcome! Sign In</p>
