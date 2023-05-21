@@ -30,7 +30,7 @@ export const Login = () => {
     <div className="login-page">
       <div className="main_login">
         <h1>Sneaker Club</h1>
-        <p>Welcome back! Sign In</p>
+        <p>Welcome! Sign In</p>
       </div>
       <div className="login-after-signin">
         <input placeholder="Email" className="login-ip"/>
