@@ -7,9 +7,12 @@ export const AllProduct = () => {
   console.log(sneakers);
 
   return (
-    <div>
+  
      
-      <Filter />
+     <div className="filter-container">
+     <Filter />
+     
+      
       <div className="productCard">
         {sneakers?.map((shoes) => (
           <div key={shoes.id} className="prod-card">

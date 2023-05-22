@@ -7,6 +7,11 @@
      border: 1px solid black;
 }
 
+.filter-container{
+    display: flex;
+    
+}
+
 .shoes-images{
     height: 300px;
    width: 350px;
