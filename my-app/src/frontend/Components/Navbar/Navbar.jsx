@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import  {faCartShopping} from "@fortawesome/free-regular-svg-icons"
@@ -9,8 +9,12 @@ import {ShoppingCartOutlinedIcon} from '@mui/icons-material/ShoppingCartOutlined
 import {BsCart2} from "react-icons/bs"
 import {AiOutlineHeart} from "react-icons/ai"
 import {AiOutlineUser} from "react-icons/ai"
+import { AuthContext } from "../../Context/AuthContext";
 
 export const Navbar = () => {
+
+  const{token} = useContext(AuthContext)
+
   return (
     <div className="nav">
       <div className="first-nav">
@@ -34,8 +38,12 @@ export const Navbar = () => {
         
         <NavLink to="/cart"><BsCart2/></NavLink>
         <NavLink to="/wishlist"><AiOutlineHeart/> </NavLink>
-        <NavLink to="/login" ><AiOutlineUser/></NavLink>
+        <NavLink to= {`${token ? "/profile" : "/login"}`}><AiOutlineUser/></NavLink>
         {/* <NavLink to="/signup">SignUp</NavLink> */}
+
+
+
+        
        
       </div>
     </div>

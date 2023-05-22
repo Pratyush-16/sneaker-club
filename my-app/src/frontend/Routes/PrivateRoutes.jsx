@@ -7,5 +7,5 @@ export const PrivateRoutes = ({ children }) => {
   const { token } = useContext(AuthContext);
   const location = useLocation();
 
-  return token ? children : <Navigate  to='/login' state={{ from: location }}/>
+  return token ? children : <Navigate replace to='/login' state={{ from: location }}/>
 }

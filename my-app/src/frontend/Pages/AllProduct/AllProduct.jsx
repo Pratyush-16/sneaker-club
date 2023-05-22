@@ -3,7 +3,7 @@ import Filter from "../../Components/Filters/Filter";
 import { DataContext } from "../../Context/DataContext";
 
 export const AllProduct = () => {
-  const { sneakers } = useContext(DataContext);
+  const { sneakers , setCart , cart} = useContext(DataContext);
   console.log(sneakers);
 
   return (
@@ -21,7 +21,7 @@ export const AllProduct = () => {
             <p>Price : ${shoes.original_price}</p>
 
             <p>{shoes.categoryName}</p>
-            <button className="add-to-cart">Add to Cart</button>
+            <button className="add-to-cart" onClick={()=> setCart([...cart, shoes])}>Add to Cart</button>
             <button className="add-to-wishlist">Add to WishList</button>
           </div>
         ))}

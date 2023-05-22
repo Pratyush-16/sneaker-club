@@ -5,6 +5,8 @@ export const DataContext = createContext();
 
 export const DataContextProvider = ({ children }) => {
   const [sneakers, setSneakers] = useState(null);
+  const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([])
 
   const getSneakers = async () => {
     try {
@@ -21,6 +23,6 @@ export const DataContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <DataContext.Provider value={{ sneakers }}>{children}</DataContext.Provider>
+    <DataContext.Provider value={{ sneakers, cart , setCart, wishlist, setWishlist}}>{children}</DataContext.Provider>
   );
 };

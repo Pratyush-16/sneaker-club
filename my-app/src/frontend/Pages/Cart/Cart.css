@@ -1,0 +1,8 @@
+.cart-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.category-card{
+    margin: 10px;
+}

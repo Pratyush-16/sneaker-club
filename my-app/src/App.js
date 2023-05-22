@@ -7,13 +7,14 @@ import { Navbar } from "./frontend/Components/Navbar/Navbar";
 import { Routes, Route } from "react-router-dom";
 import {Home} from "./frontend/Pages/Home/Home"
 // import { AllProduct } from "./frontend/Pages/AllProduct";
-import { Cart } from "./frontend/Pages/Cart";
+import { Cart } from "./frontend/Pages/Cart/Cart";
 import { Wishlist } from "./frontend/Pages/Wishlist";
 import { Login } from "./frontend/Pages/Auth/Log In/Login";
 import { AllProduct } from "./frontend/Pages/AllProduct/AllProduct";
 import { Signup } from "./frontend/Pages/Auth/Sign Up/Signup";
 import  Mockman  from "mockman-js";
 import { PrivateRoutes } from "./frontend/Routes/PrivateRoutes";
+import Profile from "./frontend/Pages/ProfilePage/Profile";
 
 
 function App() {
@@ -31,6 +32,8 @@ function App() {
            
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path= "/profile" element= {<Profile/>}/>
+
         </Routes>
       {/* <Hero/>
       <Categories/> */}
