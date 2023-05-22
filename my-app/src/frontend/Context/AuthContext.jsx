@@ -35,6 +35,8 @@ export const AuthContextProvider = ({ children }) => {
             user: createdUser,
           })
         );
+        console.log(createdUser)
+          console.log(encodedToken);
         setUser(createdUser);
         setToken(encodedToken);
       }
@@ -53,7 +55,15 @@ export const AuthContextProvider = ({ children }) => {
         password,
       });
       //   console.log(response)
-      if (status === 201) {
+    //   if (status === 201) {
+    //     localStorage.setItem(
+    //       "login",
+    //       {
+    //         token: encodedToken,
+    //         user: foundUser,
+    //       }
+    //     );
+    if (status === 201) {
         localStorage.setItem(
           "login",
           JSON.stringify({
@@ -63,6 +73,7 @@ export const AuthContextProvider = ({ children }) => {
         );
         setUser(foundUser);
         setToken(encodedToken);
+        console.log(foundUser, encodedToken);
       }
     } catch (error) {
       console.log(error);

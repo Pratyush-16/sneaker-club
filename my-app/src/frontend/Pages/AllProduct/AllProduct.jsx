@@ -8,8 +8,7 @@ export const AllProduct = () => {
 
   return (
     <div>
-      <h1>This is the product page</h1>
-
+     
       <Filter />
       <div className="productCard">
         {sneakers?.map((shoes) => (

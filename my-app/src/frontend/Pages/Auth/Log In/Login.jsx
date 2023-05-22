@@ -43,29 +43,34 @@ export const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    loginHandler(userDetails.email, userDetails.password);
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+  //   loginHandler(userDetails.email, userDetails.password);
 
   
-  };
+  // };
 
-  if(token){
-    console.log("USER log IN")
-  }else{
-    console.log("USER  log out")
+  const onClickHandler = () => {
+    loginHandler(userDetails.email, userDetails.password);
+    console.log("clicked")
   }
 
-  // useEffect(() => {
+  
+  // if(token){
+  //   console.log("USER log IN")
+  // }else{
+  //   console.log("USER  log out")
+  // }
+
+  useEffect(() => {
     
-  //   if(token) {
-  //     navigate(location?.state?.from.pathname || '/')
-  //   }
-  // } ,[token])
+    if(token) {
+      navigate(location?.state?.from.pathname || '/')
+    }
+  } ,[token])
 
   return (
-    <form className="login" onSubmit={submitHandler}>
-      <div className="login-page">
+    <div className="login" >
         <div className="main_login">
           <h1>Sneaker Club</h1>
           <p>Welcome! Sign In</p>
@@ -90,7 +95,7 @@ export const Login = () => {
           />
         </div>
         <div>
-          <button className="login-btn" onClick={loginHandler}>
+          <button className="login-btn" onClick={onClickHandler}>
             Log  In
           </button>
 
@@ -109,7 +114,8 @@ export const Login = () => {
       </div>
 
       
-    </form>
+   
+   
 
 
   );
