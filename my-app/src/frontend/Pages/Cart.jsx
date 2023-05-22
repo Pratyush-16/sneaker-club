@@ -1,5 +1,7 @@
 import React from 'react'
 
+// const cart = [nike, addidas, ]
+
 export const  Cart =()=> {
   return (
     <div>

@@ -1,22 +1,83 @@
 import { createContext, useState } from "react";
+import axios from "axios";
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
-export const AuthContextProvider = ({children}) =>{
+export const AuthContextProvider = ({ children }) => {
+  const localStorageToken = JSON.parse(localStorage.getItem("login"));
+  const [token, setToken] = useState(localStorageToken?.token);
+  const localStorageUser = JSON.parse(localStorage.getItem("user"));
+  const [user, setUser] = useState(localStorageUser?.user);
 
-    const [user, setUser]= useState(null)
+  const login = (user) => {
+    setUser(user);
+  };
 
-    const login = (user)=> {
-        setUser(user);
+  
 
+  const signupHandler = async (firstName, lastName, email, password) => {
+    try {
+      const {
+        status,
+        data: { createdUser, encodedToken },
+      } = await axios.post("/api/auth/signup", {
+        firstName,
+        lastName,
+        email,
+        password,
+      });
+      //   console.log(response)
+      if (status === 201) {
+        localStorage.setItem(
+          "login",
+          JSON.stringify({
+            token: encodedToken,
+            user: createdUser,
+          })
+        );
+        setUser(createdUser);
+        setToken(encodedToken);
+      }
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    const logout = () => {
-        setUser(null);
+  const loginHandler = async (email, password) => {
+    try {
+      const {
+        status,
+        data: { foundUser, encodedToken },
+      } = await axios.post("/api/auth/login", {
+        email,
+        password,
+      });
+      //   console.log(response)
+      if (status === 201) {
+        localStorage.setItem(
+          "login",
+          JSON.stringify({
+            token: encodedToken,
+            user: foundUser,
+          })
+        );
+        setUser(foundUser);
+        setToken(encodedToken);
+      }
+    } catch (error) {
+      console.log(error);
     }
+  };
 
-    return(
-        < AuthContext.Provider value={{user, login, logout}}>{children}</AuthContext.Provider>
-    )
+  const logoutHandler = () => {
+    localStorage.removeItem('login');
+    setToken(null);
+    setUser(null);
+  };
 
-}
+  return (
+    <AuthContext.Provider value={{ token, user, login, logoutHandler, signupHandler,loginHandler }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};

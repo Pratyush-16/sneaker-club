@@ -1,34 +1,53 @@
-import React, { useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import axios from 'axios'
 import "./Signup.css"
+import { Link, NavLink ,useLocation, useNavigate} from 'react-router-dom'
+import { Login } from '../Log In/Login'
+import { AuthContext } from '../../../Context/AuthContext'
+import { InvalidTokenError } from 'jwt-decode'
+
+
 
 export const  Signup =() => {
 
+  const {signupHandler, token}= useContext(AuthContext)
+
     const[userData, setUserData] = useState({
         fullName: "",
+        lastName: "",
         email:"",
         password:""
     })
+
+    const navigate = useNavigate();
+  const location = useLocation();
 
     const userDataHandler = (event)=>{
         const { name, value } = event.target;
         setUserData({...userData,[name]:value})
     }
 
-    const signupHandler = async(event)=>{
-        event.preventDefault();
-        console.log(userData);
-        try{
-          const response = await axios.post('/api/auth/signup',userData);
-          console.log(response)
-        }
-         catch (error) {
-          console.log(error);
-        }
-      };
+    const submitHandler = (event)=> {
+      event.preventDefault();
+      signupHandler(userData.fullName,userData.lastName, userData.email, userData.password)
+    }
+
+    if(token){
+      console.log("USER IN")
+    }else{
+      console.log("USER out")
+    }
+
+    // useEffect(() => {
+    
+    //   if(token) {
+    //     navigate(location?.state?.from.pathname || '/')
+    //   }
+    // } ,[token])
+    
 
   return (
-    <form className="login" onSubmit={signupHandler}>
+    <form className="signup" onSubmit={submitHandler}>
       {/* <div className="login"> */}
       <div className="loginMain">
         <h1>Sneakers Club</h1>
@@ -72,7 +91,8 @@ export const  Signup =() => {
         </button>
       </div>
       <div>
-        <button className="login-btn">Log In</button>
+        
+       <Link to="/login"> <button className="login-btn">Log In</button></Link>
       </div>
     
     </form>

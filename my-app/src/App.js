@@ -9,10 +9,11 @@ import {Home} from "./frontend/Pages/Home/Home"
 // import { AllProduct } from "./frontend/Pages/AllProduct";
 import { Cart } from "./frontend/Pages/Cart";
 import { Wishlist } from "./frontend/Pages/Wishlist";
-import { Login } from "./frontend/Pages/Auth/Login";
+import { Login } from "./frontend/Pages/Auth/Log In/Login";
 import { AllProduct } from "./frontend/Pages/AllProduct/AllProduct";
-import { Signup } from "./frontend/Pages/Auth/Signup";
+import { Signup } from "./frontend/Pages/Auth/Sign Up/Signup";
 import  Mockman  from "mockman-js";
+import { PrivateRoutes } from "./frontend/Routes/PrivateRoutes";
 
 
 function App() {
@@ -24,8 +25,8 @@ function App() {
             <Route index  element={<Home/>}/>
             
             <Route path ="/allproduct" element ={<AllProduct/>}/>
-            <Route path="/cart" element= {<Cart/>}/>
-            <Route path = "/wishlist" element={<Wishlist/>}/>
+            <Route path="/cart" element= {<PrivateRoutes><Cart/></PrivateRoutes>}/>
+            <Route path = "/wishlist" element={<PrivateRoutes><Wishlist/></PrivateRoutes>}/>
             <Route path = "/mockman" element={<Mockman/>}/>
            
             <Route path="/signup" element={<Signup/>}/>
