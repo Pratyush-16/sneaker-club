@@ -6,12 +6,16 @@
      background-color: #7a7b81;
      gap: 2rem;
      padding: 0 2rem;
-     position: fixed;
+     /* position: fixed; */
      z-index: 10;
      width: 100%;
      opacity: 90%;
      
 
+  }
+  .nav-first{
+    text-decoration: none;
+    color: white;
   }
   
   .second-nav {
