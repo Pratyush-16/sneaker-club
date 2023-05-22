@@ -8,7 +8,7 @@ import { Routes, Route } from "react-router-dom";
 import {Home} from "./frontend/Pages/Home/Home"
 // import { AllProduct } from "./frontend/Pages/AllProduct";
 import { Cart } from "./frontend/Pages/Cart/Cart";
-import { Wishlist } from "./frontend/Pages/Wishlist";
+import { Wishlist } from "./frontend/Pages/Wishlist/Wishlist";
 import { Login } from "./frontend/Pages/Auth/Log In/Login";
 import { AllProduct } from "./frontend/Pages/AllProduct/AllProduct";
 import { Signup } from "./frontend/Pages/Auth/Sign Up/Signup";

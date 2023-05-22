@@ -3,7 +3,7 @@ import Filter from "../../Components/Filters/Filter";
 import { DataContext } from "../../Context/DataContext";
 
 export const AllProduct = () => {
-  const { sneakers , setCart , cart} = useContext(DataContext);
+  const { sneakers , setCart , cart, wishlist, setWishlist} = useContext(DataContext);
   console.log(sneakers);
 
   return (
@@ -22,7 +22,7 @@ export const AllProduct = () => {
 
             <p>{shoes.categoryName}</p>
             <button className="add-to-cart" onClick={()=> setCart([...cart, shoes])}>Add to Cart</button>
-            <button className="add-to-wishlist">Add to WishList</button>
+            <button className="add-to-wishlist" onClick={() => setWishlist([...wishlist , shoes])} >Add to WishList</button>
           </div>
         ))}
       </div>
