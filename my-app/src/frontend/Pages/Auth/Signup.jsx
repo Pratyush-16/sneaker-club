@@ -37,21 +37,21 @@ export const  Signup =() => {
       <div className="login-first">
         <input
           placeholder="First Name"
-          className="login_input"
+          className="login-ip"
           name="firstName"
           value={userData.firstName}
           onChange={userDataHandler}
         />
         <input
           placeholder="Last Name"
-          className="login_input"
+          className="login-ip"
           name="lastName"
           value={userData.lastName}
           onChange={userDataHandler}
         />
         <input
           placeholder="Email"
-          className="login_input"
+          className="login-ip"
           onChange={userDataHandler}
           name="email"
           type="email"
@@ -59,7 +59,7 @@ export const  Signup =() => {
         />
         <input
           placeholder="Password"
-          className="login_input"
+          className="login-ip"
           onChange={userDataHandler}
           name="password"
           type="password"
@@ -67,14 +67,14 @@ export const  Signup =() => {
         />
       </div>
       <div>
-        <button className="login_button" type="submit">
-          SIGN UP
+        <button className="login-btn" type="submit">
+          Sign Up
         </button>
       </div>
       <div>
-        <button className="login_button">LOGIN IN</button>
+        <button className="login-btn">Log In</button>
       </div>
-      {/* </div> */}
+    
     </form>
   );
 }
