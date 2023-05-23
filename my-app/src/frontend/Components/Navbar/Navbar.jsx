@@ -38,7 +38,7 @@ export const Navbar = () => {
         
         <NavLink to="/cart"><BsCart2/></NavLink>
         <NavLink to="/wishlist"><AiOutlineHeart/> </NavLink>
-        <NavLink to= {`${token ? "/profile" : "/login"}`}><AiOutlineUser/></NavLink>
+        <NavLink to= {`${token ? "/userprofile" : "/login"}`}><AiOutlineUser/></NavLink>
         {/* <NavLink to="/signup">SignUp</NavLink> */}
 
 

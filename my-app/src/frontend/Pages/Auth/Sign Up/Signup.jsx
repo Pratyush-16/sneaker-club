@@ -38,12 +38,7 @@ export const  Signup =() => {
       console.log("USER out")
     }
 
-    // useEffect(() => {
-    
-    //   if(token) {
-    //     navigate(location?.state?.from.pathname || '/')
-    //   }
-    // } ,[token])
+
     
 
   return (

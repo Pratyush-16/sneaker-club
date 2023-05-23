@@ -1,31 +1,9 @@
-// import React from "react";
 
-// export const Login = () => {
-//   return (
-//     <main className="login-content">
-//       <div className="login-body">
-//         <h4 className="login-header">Sign In</h4>
-
-//         <p className="login-body text--center">
-//           Join back and get access to exclusive items
-//         </p>
-
-//         <input
-//           type="email"
-//           name="email"
-//           placeholder="Email"
-//           id="email"
-//           value=""
-//           className={`input__field } `}
-//         />
-//       </div>
-//     </main>
-//   );
-// };
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Login.css";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
+import UserProfile from "../UserProfile";
 
 export const Login = () => {
   const { loginHandler, token, logoutHandler } = useContext(AuthContext);
@@ -54,20 +32,21 @@ export const Login = () => {
     console.log("clicked");
   };
 
-  // if(token){
-  //   console.log("USER log IN")
-  // }else{
-  //   console.log("USER  log out")
-  // }
 
   useEffect(() => {
     if (token) {
       navigate(location?.state?.from.pathname || "/");
     }
-  }, [token]);
+  }, []);
+
+  console.log(loginHandler)
+
+ if(token) return(
+    <UserProfile/>
+  ) 
 
   return (
-    <form className="login">
+    <form className="login" onSubmit={e => e.preventDefault()}>
       <div className="main_login">
         <h1>Sneaker Club</h1>
         <p>Welcome! Sign In</p>
@@ -98,7 +77,7 @@ export const Login = () => {
 
         <button
           className="login-btn"
-          onClick={() => setUserDetails(guestUserDetails)} //api call, api-> mail,pass in body
+          onClick={()=> loginHandler("pratyushsingh.1602@gmail.com","pratyush")} //api call, api-> mail,pass in body
           
         >
           Log In as Guest

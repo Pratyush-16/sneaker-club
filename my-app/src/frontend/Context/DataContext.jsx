@@ -11,7 +11,7 @@ export const DataContextProvider = ({ children }) => {
   const getSneakers = async () => {
     try {
       const result = await axios.get("/api/products");
-      console.log(result.data.products, "hello");
+      //console.log(result.data.products);
       setSneakers(result.data.products);
     } catch (err) {
       console.log(err);

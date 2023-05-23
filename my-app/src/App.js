@@ -16,6 +16,7 @@ import  Mockman  from "mockman-js";
 import { PrivateRoutes } from "./frontend/Routes/PrivateRoutes";
 import Profile from "./frontend/Pages/ProfilePage/Profile";
 import "./App.css"
+import UserProfile from "./frontend/Pages/Auth/UserProfile";
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
            
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/login" element={<Login/>}/>
-            <Route path= "/profile" element= {<Profile/>}/>
+            <Route path= "/userprofile" element= {<UserProfile/>}/>
 
         </Routes>
       {/* <Hero/>

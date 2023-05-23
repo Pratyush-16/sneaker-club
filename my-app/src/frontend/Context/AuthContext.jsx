@@ -1,17 +1,25 @@
 import { createContext, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const localStorageToken = JSON.parse(localStorage.getItem("login"));
+
+  //console.log(localStorageToken)
   const [token, setToken] = useState(localStorageToken?.token);
-  const localStorageUser = JSON.parse(localStorage.getItem("user"));
-  const [user, setUser] = useState(localStorageUser?.user);
+  const localStorageUser = localStorageToken.user
+  //console.log(localStorageUser)
+  const [user, setUser] = useState(localStorageUser);
+
+  //console.log(token,user)
 
   const login = (user) => {
     setUser(user);
   };
+  const navigate = useNavigate()
+
 
   
 
@@ -27,7 +35,7 @@ export const AuthContextProvider = ({ children }) => {
         password,
       });
       //   console.log(response)
-      if (status === 201) {
+      if (status === 201 || status ===200) {
         localStorage.setItem(
           "login",
           JSON.stringify({
@@ -46,6 +54,7 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const loginHandler = async (email, password) => {
+    console.log("loginis clicked")
     try {
       const {
         status,
@@ -54,16 +63,9 @@ export const AuthContextProvider = ({ children }) => {
         email,
         password,
       });
-      //   console.log(response)
-    //   if (status === 201) {
-    //     localStorage.setItem(
-    //       "login",
-    //       {
-    //         token: encodedToken,
-    //         user: foundUser,
-    //       }
-    //     );
-    if (status === 201) {
+     console.log(status,foundUser);
+    if (status === 201 || status ===200) {
+      
         localStorage.setItem(
           "login",
           JSON.stringify({
@@ -75,10 +77,13 @@ export const AuthContextProvider = ({ children }) => {
         setToken(encodedToken);
         console.log(foundUser, encodedToken);
       }
+      navigate("/")
     } catch (error) {
       console.log(error);
     }
   };
+
+  console.log()
 
   const logoutHandler = () => {
     localStorage.removeItem('login');
