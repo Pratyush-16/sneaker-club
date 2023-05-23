@@ -15,6 +15,7 @@ import { Signup } from "./frontend/Pages/Auth/Sign Up/Signup";
 import  Mockman  from "mockman-js";
 import { PrivateRoutes } from "./frontend/Routes/PrivateRoutes";
 import Profile from "./frontend/Pages/ProfilePage/Profile";
+import "./App.css"
 
 
 function App() {

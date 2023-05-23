@@ -12,8 +12,10 @@ export const Home = () => {
       <Hero/>
       
       <div className="container">
+        {/* <h3 className="container-center">Categories</h3> */}
         {homecategories.map((item) => (
           <div className="category-card">
+           
             <img src={item.img} alt="shoes" className="cardImage" />
             <p>{item.category}</p>
           </div>
