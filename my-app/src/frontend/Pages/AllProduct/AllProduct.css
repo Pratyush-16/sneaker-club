@@ -1,14 +1,19 @@
 .productCard{
     display: flex;
     gap: 1rem;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 1rem;
      border: 1px solid black;
+     width: 80%;
+     /* margin-right: 0; */
+     margin-left:2rem;
 }
 
 .filter-container{
     display: flex;
+    justify-content: center;
+    margin-right: 0;
     
 }
 

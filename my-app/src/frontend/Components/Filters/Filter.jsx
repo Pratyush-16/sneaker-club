@@ -5,87 +5,76 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 export default function Filter() {
   return (
 
-    <fieldset>
-      <legend>
-        Filters
-      </legend>
+    // <fieldset>
+    //   <legend>
+    //     Filters
+    //   </legend>
 
-      <div className="main-filter">
-      
-
-      <div className="range-filter">
-      <p>Price Range: </p>
-      <div>
-        <span>$50</span>
-      <input type="range" min="0" max="1000" value="" />
-      <span>$200</span>
+      <div className="filterDiv">
+      <div className="filter-first">
+        <p>Filters</p>
+        <a>Clear</a>
       </div>
-       
+      <hr/>
+      <div className="filter-second">
+        <input type="range" />
       </div>
-
-      <div className="filter-category">
-        <p>Category: </p>
-      
-      <select className="categories" >
-      <option value="Running">Running</option>
-      <option value="Lifestyle">Lifestyle</option>
-      <option value="SkateBoarding">SkateBoarding</option>
-      </select>
-      </div>
-
-      {/* <label>
-        <input type="checkbox" /> Running
-      </label>
-
-      <label>
-        <input type="checkbox" /> Lifestyle
-      </label>
-
-      <label>
-        <input type="checkbox" /> Skateboarding
-      </label> */}
-
-      <div className="filter-rating">
-      <p>Rating :</p>
-        <select className="ratings">
-          
-          <option value=""> 4.5 & above</option>
-          <option value=""> 4.3 & above</option>
-          <option value="">4.0 & above</option>
-        </select>
-        {/* <label>
-          <input type="radio" />4
+      <hr/>
+      <div className="filter-third">
+        <p>Category</p>
+        <label>
+          <input type="checkbox" />
+          Indoor Plants
         </label>
         <label>
-          <input type="radio" />3
+          <input type="checkbox" />
+          Fruit PLants
         </label>
         <label>
-          <input type="radio" />2
+          <input type="checkbox" />
+          Pots and Planter
         </label>
         <label>
-          <input type="radio" />1
-        </label> */}
+          <input type="checkbox" />
+          Tool Kit
+        </label>
+        <label>
+          <input type="checkbox" />
+          Flower Plant
+        </label>
       </div>
-
-      <div className="filter-sort">
+      <hr/>
+      <div className="filter-fourth">
+        <p>Rating</p>
+        <label>
+          <input type="radio" />4 star and above
+        </label>
+        <label>
+          <input type="radio" />3 star and above
+        </label>
+        <label>
+          <input type="radio" />2 star and above
+        </label>
+        <label>
+          <input type="radio" />1 star and above
+        </label>
+      </div>
+      <hr/>
+      <div className="filter-fifth">
         <p>Sort by</p>
-
-        <select value="sort">
-          <option value="">Low to High</option>
-          <option value="">High to Low</option>
-        </select>
-        {/* <label>
+        <label>
           <input type="radio" />
           Price - Low to High
         </label>
         <label>
           <input type="radio" />
           Price - High to Low
-        </label> */}
+        </label>
       </div>
     </div>
-  
+  );
 
-    </fieldset>
-  )
+
+    // </fieldset>
+  
 }

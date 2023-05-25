@@ -1,4 +1,4 @@
-fieldset{
+/* /* fieldset{
     padding: 1rem;
     margin: 2rem;
     width: max-content;
@@ -8,24 +8,140 @@ fieldset{
 legend{
     font-weight: bold;
     font-size: 1.25rem;
-}
+} */
 
-.main-filter{
+/* .filterDiv {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid black; */
-    /* justify-content: space-between; */
+    width: 270px;
+    height: 100vh;
+    grid-gap: 1rem;
     gap: 1rem;
-    /* justify-content: center;
-} */
-width: 200px;
-}
-.first-filter{
-    
+    position: fixed;
+    left: 0;
+    padding: 1rem 2rem;
+   
+    overflow-y: auto;
+    z-index: 5;
+  }
+  
+  .filter-first {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .filter-third {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .filter-fourth {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .filter-fifth {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  } */ 
+
+  .filterDiv {
+    background-color: #f1f1f1;
+    padding: 50px;
+    position: sticky;
+    height: 100vh;
+    overflow-y: auto; 
+  }
+
+    .filterDiv {
+  background-color: #f1f1f1;
+  padding: 20px;
 }
 
-select{
-    padding: 0.5rem;
-    width: 150px;
+.filter-first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
+.filter-first p {
+  font-weight: bold;
+  margin: 0;
+}
+
+.filter-second input[type="range"] {
+  width: 100%;
+}
+
+.filter-third,
+.filter-fourth,
+.filter-fifth {
+  margin-top: 10px;
+}
+
+.filter-third label,
+.filter-fourth label,
+.filter-fifth label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.filter-third input[type="checkbox"],
+.filter-fourth input[type="radio"],
+.filter-fifth input[type="radio"] {
+  margin-right: 5px;
+}
+
+hr {
+  margin: 15px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+  
+  
+  .filter-first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .filter-first p {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .filter-second input[type="range"] {
+    width: 100%;
+  }
+  
+  .filter-third,
+  .filter-fourth,
+  .filter-fifth {
+    margin-top: 10px;
+  }
+  
+  .filter-third label,
+  .filter-fourth label,
+  .filter-fifth label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .filter-third input[type="checkbox"],
+  .filter-fourth input[type="radio"],
+  .filter-fifth input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  hr {
+    margin: 15px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+  
