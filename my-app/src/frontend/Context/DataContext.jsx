@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useReducer, useState } from "react";
+  import { initialState, reducer } from "../Reducer/DataReduceer";
 
 export const DataContext = createContext();
 
@@ -7,6 +8,9 @@ export const DataContextProvider = ({ children }) => {
   const [sneakers, setSneakers] = useState(null);
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([])
+
+ 
+  const[state,dispatch] = useReducer(reducer,initialState)
 
   const getSneakers = async () => {
     try {
@@ -22,7 +26,8 @@ export const DataContextProvider = ({ children }) => {
     getSneakers();
   }, []);
 
+  
   return (
-    <DataContext.Provider value={{ sneakers, cart , setCart, wishlist, setWishlist}}>{children}</DataContext.Provider>
+    <DataContext.Provider value={{ state, dispatch, sneakers, cart , setCart, wishlist, setWishlist}}>{children}</DataContext.Provider>
   );
 };

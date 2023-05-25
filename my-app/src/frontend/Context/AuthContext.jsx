@@ -9,11 +9,11 @@ export const AuthContextProvider = ({ children }) => {
 
   //console.log(localStorageToken)
   const [token, setToken] = useState(localStorageToken?.token);
-  const localStorageUser = localStorageToken.user
+  const localStorageUser = localStorageToken?.user
   //console.log(localStorageUser)
   const [user, setUser] = useState(localStorageUser);
 
-  //console.log(token,user)
+  console.log(token,"user")
 
   const login = (user) => {
     setUser(user);

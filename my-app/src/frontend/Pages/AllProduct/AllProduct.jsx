@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
 import Filter from "../../Components/Filters/Filter";
 import { DataContext } from "../../Context/DataContext";
+import { addToCart } from "../../Services/CartServices";
+import { products } from "../../../backend/db/products";
+import { AuthContext } from "../../Context/AuthContext";
+
 
 export const AllProduct = () => {
-  const { sneakers , setCart , cart, wishlist, setWishlist} = useContext(DataContext);
+  const { sneakers ,dispatch, setCart , cart, wishlist, setWishlist} = useContext(DataContext);
+  const {token} = useContext(AuthContext)
   console.log(sneakers);
 
   return (
@@ -24,7 +29,7 @@ export const AllProduct = () => {
             <p>Price : ${shoes.original_price}</p>
 
             <p>{shoes.categoryName}</p>
-            <button className="add-to-cart" onClick={()=> setCart([...cart, shoes])}>Add to Cart</button>
+            <button className="add-to-cart" onClick={()=> addToCart(shoes,token, dispatch)}>Add to Cart</button>
             <button className="add-to-wishlist" onClick={() => setWishlist([...wishlist , shoes])} >Add to WishList</button>
           </div>
         ))}
