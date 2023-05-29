@@ -3,13 +3,15 @@ import { DataContext } from "../../Context/DataContext";
 import { products } from "../../../backend/db/products";
 import "../Cart/Cart.css";
 import { AuthContext } from "../../Context/AuthContext";
+import { addToWishlist } from "../../Services/WishlistServices";
+import { removeFromCart } from "../../Services/CartServices";
 
 // const cart = [nike, addidas, ]
 
 export const Cart = () => {
 
   const{token} = useContext(AuthContext)
-  const { sneakers, state} = useContext(DataContext);
+  const { state, dispatch} = useContext(DataContext);
   
 
   
@@ -24,8 +26,8 @@ export const Cart = () => {
             <p>Brand: {item.brand}</p>
             <p>Price: ${item.original_price}</p>
  
-            {/* <button className="cart-Btn" onClick={()=> removeFromCartHandler(item.id)}>Remove from Cart</button> */}
-            <button className="cart-Btn" onClick={()=> addToWishList(products,token, dispatch)}>Add to Wishlist</button> */}
+             <button className="cart-Btn" onClick={()=> removeFromCart(item._id,token,dispatch)}>Remove from Cart</button> 
+            <button className="cart-Btn" onClick={()=> addToWishlist(item,token, dispatch)}>Add to Wishlist</button> 
           </div>
         ))}
       </div>
