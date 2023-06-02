@@ -5,33 +5,54 @@ import { addToCart } from "../../Services/CartServices";
 import { products } from "../../../backend/db/products";
 import { AuthContext } from "../../Context/AuthContext";
 import { addToWishlist } from "../../Services/WishlistServices";
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 export const AllProduct = () => {
-  const { sneakers ,dispatch, setCart , cart, wishlist, setWishlist} = useContext(DataContext);
+  const { state, sneakers ,dispatch, wishlist, setWishlist} = useContext(DataContext);
   const {token} = useContext(AuthContext)
-  console.log(sneakers);
+
+  //console.log(sneakers);
+
+   const isInCart =(idToFind)=> {
+    const cartfind=  state.cart.find(({_id})=> _id === idToFind)
+    //console.log(cartfind)
+    return cartfind
+    
+    //console.log(cart)
+  }
+  
+  const isInWishlist = (idToFind)=> {
+     const wishlistFind = state.wishlist.find(({_id})=> _id ===idToFind)
+    //console.log(wishlistFind)
+    return wishlistFind;
+  }
+ const navigate = useNavigate()
 
   return (
   
      
      <div className="filter-container">
      <Filter />
+
      
       
       <div className="productCard">
         {sneakers?.map((shoes) => (
-          <div key={shoes.id} className="prod-card">
+          <div key={shoes._id} className="prod-card">
             <img src={shoes.image} alt="shoes" className="shoes-images" />
             <p>{shoes.brand}</p>
             <p>{shoes.name}</p>
             <p>Rating: {shoes.rating}</p>
 
             <p>Price : ${shoes.original_price}</p>
-
+            <p>Category: {shoes.category_name}</p>
             <p>{shoes.categoryName}</p>
-            <button className="add-to-cart" onClick={()=> addToCart(shoes,token, dispatch)}>Add to Cart</button>
-            <button className="add-to-wishlist" onClick={() => addToWishlist(shoes,token,dispatch)} >Add to WishList</button>
+
+
+
+            <button className="add-to-cart" onClick={()=> {isInCart(shoes._id) ? navigate('/cart') :  addToCart(shoes,token, dispatch)}}> { isInCart(shoes._id)? "goToCart" : "addToCart"} </button>
+            <button className="add-to-wishlist" onClick={() => {isInWishlist(shoes._id) ? navigate('/wishlist') : addToWishlist(shoes,token,dispatch)}}>{isInWishlist(shoes._id) ? "goToWishlist" : "addToWishlist"}</button>
           </div>
         ))}
       </div>

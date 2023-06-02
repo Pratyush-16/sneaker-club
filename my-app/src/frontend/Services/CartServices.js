@@ -22,18 +22,44 @@ export const addToCart = async (product, token, dispatch) => {
 };
 
 export const removeFromCart = async (productId, token, dispatch) => {
-  console.log("Removed",productId)
+  console.log("Removed", productId);
   try {
-    const response = await axios.delete(`/api/user/cart/${productId}`,
-    
-    {
-      headers:{authorization: token}
-    });
-    console.log(response)
+    const response = await axios.delete(
+      `/api/user/cart/${productId}`,
 
-    dispatch({TYPE:"REMOVE_FROM-CART", payload: response.data.cart})
+      {
+        headers: { authorization: token },
+      }
+    );
+    console.log(response);
 
+    dispatch({ TYPE: "REMOVE_FROM-CART", payload: response.data.cart });
   } catch (error) {
     console.error(error);
   }
 };
+
+
+export const updateQuantityInCart = async(productId,token,dispatch,actionType) => {
+  try {
+    const response=await axios.post(`/api/user/cart/${productId}`,
+    {
+        action: {
+          type: actionType 
+        }
+      },
+    {
+        headers: {
+        authorization: token
+      }
+    })
+    console.log(response,"updateQuantityInCart")
+    dispatch({TYPE:"UPDATE_QTY" , payload: response.data.cart})
+  }
+ 
+  catch(error){
+    console.log(error)
+  }
+  
+
+}

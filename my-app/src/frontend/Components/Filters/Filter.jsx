@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Filter.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import { DataContext } from "../../Context/DataContext";
+import { AuthContext } from "../../Context/AuthContext";
 
 export default function Filter() {
+
+  const{dispatch} = useContext(DataContext)
   return (
 
     // <fieldset>
@@ -17,31 +21,41 @@ export default function Filter() {
       </div>
       <hr/>
       <div className="filter-second">
-        <input type="range" />
+        <input type="range" min={0} max={200} onChange={(event)=> dispatch({TYPE:"FILTER_PRICE", payload: event.target.value}) }/>
       </div>
       <hr/>
+      <div className="filter-brand">
+        <p>Brands</p>
+        <label>
+          <input type="checkbox"  />
+          Nike
+        </label>
+        <label>
+          <input type="checkbox" />
+          Addidas
+        </label>
+        <label>
+          <input type="checkbox" />
+          Vans
+        </label>
+        <hr/>
+        
+      </div>
       <div className="filter-third">
         <p>Category</p>
         <label>
           <input type="checkbox" />
-          Indoor Plants
+          Running
         </label>
         <label>
           <input type="checkbox" />
-          Fruit PLants
+          Lifestyle
         </label>
         <label>
           <input type="checkbox" />
-          Pots and Planter
+          Skateboarding
         </label>
-        <label>
-          <input type="checkbox" />
-          Tool Kit
-        </label>
-        <label>
-          <input type="checkbox" />
-          Flower Plant
-        </label>
+        
       </div>
       <hr/>
       <div className="filter-fourth">
@@ -60,7 +74,7 @@ export default function Filter() {
         </label>
       </div>
       <hr/>
-      <div className="filter-fifth">
+      <div className="filter-sortby">
         <p>Sort by</p>
         <label>
           <input type="radio" />

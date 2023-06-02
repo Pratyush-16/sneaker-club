@@ -6,9 +6,19 @@ export const DataContext = createContext();
 
 export const DataContextProvider = ({ children }) => {
   const [sneakers, setSneakers] = useState(null);
-  const [cart, setCart] = useState([]);
+  //const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([])
 
+  // state   = {
+  //   cart:[],
+  //   wishlist:[],
+  //   filters:{
+  //       sort:"",
+  //       rating:0,
+  //       categorySelected:[],
+  //       price:9000
+  //   },
+  // }
  
   const[state,dispatch] = useReducer(reducer,initialState)
 
@@ -28,6 +38,6 @@ export const DataContextProvider = ({ children }) => {
 
   
   return (
-    <DataContext.Provider value={{ state, dispatch, sneakers, cart , setCart, wishlist, setWishlist}}>{children}</DataContext.Provider>
+    <DataContext.Provider value={{ state, dispatch, sneakers,  wishlist, setWishlist}}>{children}</DataContext.Provider>
   );
 };

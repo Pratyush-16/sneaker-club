@@ -24,7 +24,8 @@ export const removeFromWishlist = async(productId,token,dispatch) =>{
     try{
         const response = await axios.delete(`/api/user/wishlist/${productId}`,
         {
-            headers:{authorization: token}
+            headers:
+            {authorization: token}
 
             }
         )

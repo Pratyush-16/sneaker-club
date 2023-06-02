@@ -76,6 +76,10 @@ legend{
 .filter-second input[type="range"] {
   width: 100%;
 }
+.filter-brand label{
+  display: block;
+  margin: 5px;
+}
 
 .filter-third,
 .filter-fourth,
