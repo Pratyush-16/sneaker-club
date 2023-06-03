@@ -25,6 +25,18 @@ export const DataContextProvider = ({ children }) => {
     getSneakers();
   }, []);
 
+  // const searchHandler =(events)=>{
+  //     dispatch(dis
+  // }
+  //  const appliedFilters = () => {
+
+  //   let sneakers =[...sneakers]
+
+  //   if(state.filter.search.length > 0) {
+  //       sneakers = sneakers.filter((item) => item.name.toLowerCase().includes(state.filter.search.toLowerCase()));
+  //   }
+  // }
+
   return (
     <DataContext.Provider
       value={{ state, dispatch, sneakers, wishlist, setWishlist }}

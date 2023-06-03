@@ -7,6 +7,13 @@ import { AuthContext } from "../../Context/AuthContext";
 export default function Filter() {
 
   const{dispatch} = useContext(DataContext)
+  const{state} = useContext(DataContext)
+
+
+
+  //console.log(state.filter)
+  
+  console.log(state);
   return (
 
     // <fieldset>
@@ -21,21 +28,27 @@ export default function Filter() {
       </div>
       <hr/>
       <div className="filter-second">
-        <input type="range" min={0} max={200} onChange={(event)=> dispatch({TYPE:"FILTER_PRICE", payload: event.target.value}) }/>
+        <input type="range" min={0} 
+        max={200} 
+        onChange={(event)=> dispatch({TYPE:"FILTER_PRICE", payload: event.target.value}) }/>
       </div>
       <hr/>
       <div className="filter-brand">
         <p>Brands</p>
         <label>
-          <input type="checkbox"  />
+          <input type="checkbox" 
+          onClick={()=> dispatch({TYPE:"checkbox-brand" , value:"Nike"})} />
           Nike
         </label>
         <label>
-          <input type="checkbox" />
+          <input type="checkbox" 
+          onClick={()=> dispatch({TYPE:"checkbox-brand" , value:"Addidas"})}/>
           Addidas
         </label>
         <label>
-          <input type="checkbox" />
+          <input type="checkbox"
+          onClick={()=> dispatch({TYPE:"checkbox-brand" , value:"Vans"})}
+           />
           Vans
         </label>
         <hr/>
@@ -44,15 +57,18 @@ export default function Filter() {
       <div className="filter-third">
         <p>Category</p>
         <label>
-          <input type="checkbox" />
+          <input type="checkbox"
+          onClick={()=> dispatch({TYPE:"checkbox", value:"Running"}) }/>
           Running
         </label>
         <label>
-          <input type="checkbox" />
+          <input type="checkbox"
+          onClick={()=> dispatch({TYPE:"checkbox", value:"Lifestyle"}) } />
           Lifestyle
         </label>
         <label>
-          <input type="checkbox" />
+          <input type="checkbox" 
+          onClick={()=> dispatch({TYPE:"checkbox", value:"Skateboarding"}) }/>
           Skateboarding
         </label>
         
@@ -61,32 +77,54 @@ export default function Filter() {
       <div className="filter-fourth">
         <p>Rating</p>
         <label>
-          <input type="radio" />4 star and above
+          <input type="radio" 
+          value="4 stars"
+          name="rating"
+          onClick={(e) => dispatch({TYPE: "ratings", value: 4})}
+          />4 star and above
         </label>
         <label>
-          <input type="radio" />3 star and above
+          <input type="radio" 
+          value="3 stars"
+          name="rating"
+          onClick={(e) => dispatch({TYPE: "ratings", value: 3})}
+          />3 star and above
         </label>
         <label>
-          <input type="radio" />2 star and above
+          <input type="radio"
+          value="2 stars"
+          name="rating" 
+          onClick={(e) => dispatch({TYPE: "ratings", value: 2})}/>2 star and above
         </label>
         <label>
-          <input type="radio" />1 star and above
+          <input type="radio" 
+          value="1 stars"
+          name="rating"
+          onClick={(e) => dispatch({TYPE: "ratings", value: 1})}/>1 star and above
         </label>
       </div>
       <hr/>
       <div className="filter-sortby">
         <p>Sort by</p>
         <label>
-          <input type="radio" />
+          <input type="radio" 
+          name="low-high"
+          value="Low to High"
+          onClick={(e) => dispatch({TYPE: "sort", value: "Low_To_High"})}/>
           Price - Low to High
         </label>
         <label>
-          <input type="radio" />
+          <input type="radio"
+           name="low-high"
+           value="high to low"
+           onClick={(e) => dispatch({TYPE: "sort",value:"High to Low"})} />
           Price - High to Low
         </label>
+        
       </div>
     </div>
   );
+
 
 
     // </fieldset>
