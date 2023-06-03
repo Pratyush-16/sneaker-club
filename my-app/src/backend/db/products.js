@@ -236,7 +236,7 @@ export const products = [
     discounted_price: 55,
     category_name: "Lifestyle",
     is_stock: true,
-    rating: 4.2,
+    rating: 3,
     reviews: 432,
     description: "These classic sneakers are a great option for any occasion.",
 

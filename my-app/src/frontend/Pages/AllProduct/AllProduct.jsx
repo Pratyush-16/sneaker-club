@@ -6,20 +6,22 @@ import { products } from "../../../backend/db/products";
 import { AuthContext } from "../../Context/AuthContext";
 import { addToWishlist } from "../../Services/WishlistServices";
 import { Navigate, useNavigate } from "react-router-dom";
+import { filterItems } from "../../Utils/filterFunction";
 
 
 export const AllProduct = () => {
   const { state, sneakers ,dispatch, wishlist, setWishlist} = useContext(DataContext);
   const {token} = useContext(AuthContext)
 
-  //console.log(sneakers);
+ 
+  const filteredData = filterItems(state)
 
    const isInCart =(idToFind)=> {
     const cartfind=  state.cart.find(({_id})=> _id === idToFind)
     //console.log(cartfind)
     return cartfind
     
-    //console.log(cart)
+
   }
   
   const isInWishlist = (idToFind)=> {
@@ -38,7 +40,7 @@ export const AllProduct = () => {
      
       
       <div className="productCard">
-        {sneakers?.map((shoes) => (
+        {filteredData?.map((shoes) => (
           <div key={shoes._id} className="prod-card">
             <img src={shoes.image} alt="shoes" className="shoes-images" />
             <p>{shoes.brand}</p>

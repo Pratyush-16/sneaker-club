@@ -3,6 +3,7 @@
 export const initialState = {
     cart:[],
     wishlist:[],
+    sneakers:[],
     filter:{
         search:"",
         sort:"null",
@@ -16,6 +17,9 @@ export const initialState = {
  export const reducer =(state, action) => {
   switch(action.TYPE){
 
+    case "INITIALIZE-SNEAKERS":
+        return {...state, sneakers: action.payload}
+        
     case "FILTER_PRICE":
         console.log(action.payload)
         return({...state, filter: {...state.filter,price: action.payload}})
