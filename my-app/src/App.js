@@ -17,6 +17,7 @@ import { PrivateRoutes } from "./frontend/Routes/PrivateRoutes";
 import Profile from "./frontend/Pages/ProfilePage/Profile";
 import "./App.css"
 import UserProfile from "./frontend/Pages/Auth/UserProfile";
+import { SingleProduct } from "./frontend/Pages/SingleProduct/SingleProduct";
 
 
 function App() {
@@ -25,9 +26,10 @@ function App() {
 
       <Navbar/>
       <Routes>
-            <Route index  element={<Home/>}/>
+            <Route path="/"  element={<Home/>}/>
             
             <Route path ="/allproduct" element ={<AllProduct/>}/>
+            <Route path ="/allproduct/:productId" element={<SingleProduct/>} />
             <Route path="/cart" element= {<PrivateRoutes><Cart/></PrivateRoutes>}/>
             <Route path = "/wishlist" element={<PrivateRoutes><Wishlist/></PrivateRoutes>}/>
             <Route path = "/mockman" element={<Mockman/>}/>
@@ -35,11 +37,9 @@ function App() {
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path= "/userprofile" element= {<UserProfile/>}/>
+            
 
         </Routes>
-      {/* <Hero/>
-      <Categories/> */}
-     {/* <Footer/> */}
       
       
     </div>

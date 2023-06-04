@@ -42,7 +42,7 @@ export const AllProduct = () => {
       <div className="productCard">
         {filteredData?.map((shoes) => (
           <div key={shoes._id} className="prod-card">
-            <img src={shoes.image} alt="shoes" className="shoes-images" />
+            <img src={shoes.image} alt="shoes" className="shoes-images"  onClick={()=>navigate (`/allproduct/${shoes._id}`)}/>
             <p>{shoes.brand}</p>
             <p>{shoes.name}</p>
             <p>Rating: {shoes.rating}</p>

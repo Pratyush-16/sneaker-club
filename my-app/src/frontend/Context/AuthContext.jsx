@@ -13,7 +13,7 @@ export const AuthContextProvider = ({ children }) => {
   //console.log(localStorageUser)
   const [user, setUser] = useState(localStorageUser);
 
-  console.log(token,"user")
+  //console.log(token,"user")
 
   const login = (user) => {
     setUser(user);
@@ -91,7 +91,7 @@ export const AuthContextProvider = ({ children }) => {
     setUser(null);
   };
 
-  console.log(token)
+  //console.log(token)
 
   return (
     <AuthContext.Provider value={{ token, user, login, logoutHandler, signupHandler,loginHandler }}>
