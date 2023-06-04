@@ -24,12 +24,13 @@ export default function Filter() {
       <div className="filterDiv">
       <div className="filter-first">
         <p>Filters</p>
-        <a>Clear</a>
+        <a onClick={()=> dispatch ({TYPE:"clear-filter"})}>Clear</a>
       </div>
       <hr/>
       <div className="filter-second">
         <input type="range" min={0} 
         max={200} 
+        value={state.filter.price}
         onChange={(event)=> dispatch({TYPE:"FILTER_PRICE", payload: event.target.value}) }/>
       </div>
       <hr/>

@@ -19,7 +19,7 @@ export const initialState = {
 
     case "INITIALIZE-SNEAKERS":
         return {...state, sneakers: action.payload}
-        
+
     case "FILTER_PRICE":
         console.log(action.payload)
         return({...state, filter: {...state.filter,price: action.payload}})
@@ -58,6 +58,15 @@ export const initialState = {
                   })
               }
   
+              }
+
+              case "clear-filter" : {
+                return {...state, filter:{search:"",
+                sort:"null",
+                rating:0,
+                categorySelected:[],
+                brand:[],
+                price:200}}
               }
 
           
