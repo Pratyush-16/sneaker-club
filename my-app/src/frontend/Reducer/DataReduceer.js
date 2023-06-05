@@ -12,6 +12,16 @@ export const initialState = {
         brand:[],
         price:200
     },
+    address:[{
+        _id:"1",
+        Name:"Pratyush",
+        Address:"51,White Street",
+        City:"Bangalore",
+        State:"Karnataka",
+        Country:"India",
+        Postal_Code:"560056",
+        Mob_No:"123456789", 
+    }],
   }
 
  export const reducer =(state, action) => {
@@ -88,6 +98,10 @@ export const initialState = {
 
     case "REMOVE_FROM-WISHLIST" :
         return({...state, wishlist:[...action.payload]})
+
+
+        case "ADD_NEW_ADDRESS":
+            return {...state,address:[...state.address,action.payLoad]}
 
     default :{
         console.log("default")

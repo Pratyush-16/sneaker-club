@@ -14,10 +14,11 @@ import { AllProduct } from "./frontend/Pages/AllProduct/AllProduct";
 import { Signup } from "./frontend/Pages/Auth/Sign Up/Signup";
 import  Mockman  from "mockman-js";
 import { PrivateRoutes } from "./frontend/Routes/PrivateRoutes";
-import Profile from "./frontend/Pages/ProfilePage/Profile";
+
 import "./App.css"
 import UserProfile from "./frontend/Pages/Auth/UserProfile";
 import { SingleProduct } from "./frontend/Pages/SingleProduct/SingleProduct";
+import { NewAddress } from "./frontend/Pages/NewAddress/NewAddress";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/signup" element={<Signup/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path= "/userprofile" element= {<UserProfile/>}/>
+            <Route path = "/address" element={<PrivateRoutes><NewAddress/></PrivateRoutes>}/>
             
 
         </Routes>

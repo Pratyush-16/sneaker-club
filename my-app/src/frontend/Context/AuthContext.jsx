@@ -34,7 +34,7 @@ export const AuthContextProvider = ({ children }) => {
         email,
         password,
       });
-      //   console.log(response)
+      
       if (status === 201 || status ===200) {
         localStorage.setItem(
           "login",
@@ -83,12 +83,12 @@ export const AuthContextProvider = ({ children }) => {
     }
   };
 
-  console.log()
 
-  const logoutHandler = () => {
+   const logoutHandler = () => {
     localStorage.removeItem('login');
-    setToken(null);
-    setUser(null);
+    setToken(false);
+    setUser(false);
+    navigate('/login')
   };
 
   //console.log(token)
