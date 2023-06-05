@@ -24,6 +24,8 @@ export const initialState = {
     }],
   }
 
+
+
  export const reducer =(state, action) => {
   switch(action.TYPE){
 
@@ -102,6 +104,14 @@ export const initialState = {
 
         case "ADD_NEW_ADDRESS":
             return {...state,address:[...state.address,action.payLoad]}
+
+            case "REMOVE_ADDRESS":
+                console.log(action.payload)
+                return {...state, address:state.address.filter(({_id})=> _id!==action.payLoad) }  
+
+                case "UPDATE_ADDRESS":
+                    return {...state,address:state.address.map((add)=>add._id===action.payLoad._id?action.payLoad:add)};
+
 
     default :{
         console.log("default")

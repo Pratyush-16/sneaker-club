@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { DataContext } from "../../Context/DataContext";
+import { useNavigate } from "react-router-dom";
 
 export const CartPrice =(products)=> {
     const {state} = useContext(DataContext)
+    const navigate = useNavigate()
 
     const priceHandler = state?.cart.reduce((acc,curr)=> curr.original_price * curr.qty +acc,0)
 
@@ -35,7 +37,7 @@ export const CartPrice =(products)=> {
               <p>Please make cart value above Rs. 1000 To Avail the discount</p>
             )}
           </div>
-          <button className="placeOrderButton">Place Order</button>
+          <button className="placeOrderButton" onClick={()=> navigate('/checkout')} >Place Order</button>
         </div>
       );
 }

@@ -4,8 +4,14 @@ import { v4 as uuid} from "uuid";
 import { DataContext } from "../../Context/DataContext";
 
 export const NewAddress = () => {
+
+    
   const navigate = useNavigate();
   const { state, dispatch } = useContext(DataContext);
+  const [isUpdate,setUpdate]=useState(false);
+  console.log(isUpdate)
+
+ 
 
   const [address, setAddress] = useState({
        _id:uuid(),
@@ -23,13 +29,22 @@ export const NewAddress = () => {
     setAddress({ ...address, [name]: value });
   };
 
-  //console.log(address);
+  console.log(address);
 
   return (
     <div className="signup-container">
       <button onClick={() => navigate(-1)}>Go Back</button>
       <div className="signup-details">
         <h5>Add New Address</h5>
+
+        {state.address.map((add) =><div style={{border:"1px solid black"}}>
+            <p>{add.Name}</p>
+        <button  onClick={()=> dispatch({TYPE:"REMOVE_ADDRESS",payLoad:add._id})}>Remove</button>
+        <button onClick={()=> {setUpdate(true)  
+            setAddress({...add})}}>Edit</button>
+        </div>) }
+
+
         <input
           name="Name"
           value={address.Name}
@@ -84,22 +99,22 @@ export const NewAddress = () => {
           <button
             className="btn-save"
             onClick={() => {
-              dispatch({ type: "ADD_NEW_ADDRESS", payLoad: address });
-              setAddress({
-                ...address,
-                _id:uuid(),
-                Name: "",
-                Address: "",
-                City: "",
-                State: "",
-                Country: "",
-                Postal_Code: "",
-                Mob_No: "",
-              });
-            }}
-          >
-            Update
+                isUpdate?dispatch({TYPE:"UPDATE_ADDRESS", payLoad:address}):
+              dispatch({ TYPE: "ADD_NEW_ADDRESS", payLoad: address })
+              setUpdate(false)
+                    setAddress({  _id:uuid(),
+                        Name: "",
+                        Address: "",
+                        City: "",
+                        State: "",
+                        Country: "",
+                        Pin_Code: "",
+                        Phone_No: "",})
+            }}>
+            {isUpdate?"Update":"Save"}
           </button>
+
+          {/* <button onClick={()=>dispatch({TYPE:"REMOVE_ADDRESS",payLoad:address._id})}>Remove</button> */}
         </div>
       </div>
     </div>
