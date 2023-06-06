@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+import { TOAST_PARAMS } from "../Utils/utils";
 
 export const addToWishlist = async(product,token, dispatch) => {
     try{
@@ -13,7 +15,7 @@ export const addToWishlist = async(product,token, dispatch) => {
         console.log(response)
 
         dispatch({TYPE:"ADD_TO_WISHLIST",payload:response.data.wishlist});
-
+        toast.success("Added To WishList",TOAST_PARAMS);
     }catch(error) {
         console.error(error);
     }
@@ -32,7 +34,7 @@ export const removeFromWishlist = async(productId,token,dispatch) =>{
         console.log(response)
         
         dispatch({TYPE: "REMOVE_FROM-WISHLIST", payload : response.data.wishlist})
-
+        toast.warn("Removed From WishList",TOAST_PARAMS);
     }catch(error) {
         console.error(error);
     }
