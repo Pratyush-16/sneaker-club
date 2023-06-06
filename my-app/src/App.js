@@ -18,6 +18,7 @@ import { SingleProduct } from "./frontend/Pages/SingleProduct/SingleProduct";
 import { NewAddress } from "./frontend/Pages/NewAddress/NewAddress";
 import { Checkout } from "./frontend/Pages/Checkout/Checkout";
 import { ToastContainer } from "react-toastify";
+import { Order } from "./frontend/Pages/Orders/Orders";
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Route path= "/userprofile" element= {<UserProfile/>}/>
             <Route path = "/address" element={<PrivateRoutes><NewAddress/></PrivateRoutes>}/>
             <Route path="/checkout" element={<Checkout/>}/>
+            <Route path="/orders" element={<Order/>} />
             
 
         </Routes>

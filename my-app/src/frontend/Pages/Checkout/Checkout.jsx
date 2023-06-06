@@ -18,7 +18,7 @@ export const Checkout = () => {
   const [orderAddress, setOrderAddress] = useState(address[0]);
   
 const checkoutHandler =()=> {
-    
+    navigate('/orders')
 }
 
 const priceHandler = state?.cart.reduce((acc, curr) => {
@@ -81,7 +81,7 @@ const priceHandler = state?.cart.reduce((acc, curr) => {
                 </div>
 
                 
-                  <button className='btn-deafult' onClick={()=>checkoutHandler()}>Place Order</button>
+                  <button className='btn-deafult' onClick={()=>checkoutHandler()}>Confirm Order</button>
                 
 
         </div>
