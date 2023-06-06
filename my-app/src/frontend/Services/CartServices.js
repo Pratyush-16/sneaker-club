@@ -6,10 +6,10 @@ import { TOAST_PARAMS } from "../Utils/utils";
 export const addToCart = async (product, token, dispatch) => {
   console.log("clicked", product, token);
   try {
-    const response = await axios.post(
-      `/api/user/cart`,
+    console.log("inside try");
+    const response = await axios.post(`/api/user/cart`,
       {
-        product,
+        product
       },
       {
         headers: { authorization: token },

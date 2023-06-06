@@ -13,6 +13,8 @@ export const AuthContextProvider = ({ children }) => {
   const localStorageUser = localStorageToken?.user;
   
   const [user, setUser] = useState(localStorageUser);
+  console.log(localStorageToken?.token,"this is token")
+  console.log(token,"token)")
 
   const login = (user) => {
     setUser(user);

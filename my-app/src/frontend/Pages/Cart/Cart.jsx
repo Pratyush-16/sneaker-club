@@ -26,7 +26,7 @@ export const Cart = () => {
       <div>
        {/* {state.cart.length===0?<h1 className='title text-center'> Your Cart Is Empty </h1>: */}
        
-      // <h2 className="heading-center">My Cart {state.cart.length}</h2>
+       <h2 className="heading-center">My Cart {state.cart.length}</h2>
 
       <div className="cart-container">
         <h2 className="heading-center">My Cart {state.cart.length}</h2>

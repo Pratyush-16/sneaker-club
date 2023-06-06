@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import "./Filter.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DataContext } from "../../Context/DataContext";
 import { AuthContext } from "../../Context/AuthContext";
 
