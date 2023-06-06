@@ -30,12 +30,12 @@ export const Cart = () => {
           </button>
         </div>
       ) : (
-        <div>
-          <h2 className="heading-center">My Cart {state.cart.length}</h2>
+        <div className="main-cart-container">
+          {/* <h2 className="heading-center">My Cart {state.cart.length}</h2> */}
 
           <div className="cart-container">
             <h2 className="heading-center">My Cart {state.cart.length}</h2>
-            {/* {if(state.cart.length ===0 ?<h1>Your Cart is Empty</h1>)} */}
+    
             {state.cart?.map((item) => (
               <div className="category-cardd">
                 <div className="cart-prod-image">

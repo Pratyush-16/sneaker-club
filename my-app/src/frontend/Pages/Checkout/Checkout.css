@@ -1,0 +1,13 @@
+.title{
+ justify-content: center;
+}
+.order-summary{
+    display: flex;
+    margin: 2rem;
+    justify-content: space-around;
+}
+
+.main-order-detail-price-container{
+    /* display: flex; */
+
+}

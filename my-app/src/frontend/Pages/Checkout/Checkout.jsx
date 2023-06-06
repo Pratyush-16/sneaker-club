@@ -2,33 +2,32 @@ import { useContext, useState } from "react";
 import { DataContext } from "../../Context/DataContext";
 import { AuthContext } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { CartPrice } from "../Cart/CartPrice";
-import { billAmountHandle } from "../../Utils/cart";
-
+import "../Checkout/Checkout.css"
 
 export const Checkout = () => {
   const navigate = useNavigate();
 
-  const {state} = useContext(DataContext)
+  const { state } = useContext(DataContext);
   const {
     state: { address, cart },
     dispatch,
   } = useContext(DataContext);
   const { tokens } = useContext(AuthContext);
   const [orderAddress, setOrderAddress] = useState(address[0]);
-  
-const checkoutHandler =()=> {
-    navigate('/orders')
-}
 
-const priceHandler = state?.cart.reduce((acc, curr) => {
-    return acc + (curr.original_price * curr.qty)
-  } ,0)
+  const checkoutHandler = () => {
+    navigate("/orders");
+  };
+
+  const priceHandler = state?.cart.reduce((acc, curr) => {
+    return acc + curr.original_price * curr.qty;
+  }, 0);
 
   return (
     <div className="order-summary-container">
-      <div className="order-summary">
         <h1 className="title">OrderSummary</h1>
+      <div className="order-summary">
+        
         <div className="order-address">
           {address.map((add, index) => (
             <div key={add._id} className="address-card">
@@ -55,39 +54,33 @@ const priceHandler = state?.cart.reduce((acc, curr) => {
           </button>
         </div>
 
-        <div className="order-details">
-          <div className="order-details-container">
-            <h3>Order Details</h3>
-            <div className="order-items">
-              <h4>Items</h4>
-              <h4>Qty</h4>
-            </div>
+        <div className="main-order-detail-price-container">
 
-          
-            {state.cart.map((item) => (
-              <p className="ordered-items" key={item._id}>
-               <span>{item.brand}</span>  <span>{item.qty}</span>
-              </p>
-            ))}
-            
+        <div className="order-details-container">
+          <h3>Order Details</h3>
+          <div className="order-items">
+            <h4>Items</h4>
+            <h4>Qty</h4>
           </div>
 
-                <div className="order-price">
-                    <h3>Price Details</h3>
-                    <p>price({cart.length})</p>
-                    <p>Total Amount : ${priceHandler}</p>
-                    
-                    
-                </div>
-
-                
-                  <button className='btn-deafult' onClick={()=>checkoutHandler()}>Confirm Order</button>
-                
-
+          {state.cart.map((item) => (
+            <p className="ordered-items" key={item._id}>
+              <span>{item.brand}</span> <span>{item.qty}</span>
+            </p>
+          ))}
         </div>
+
+        <div className="order-price-container">
+          <h3>Price Details</h3>
+          <p>price({cart.length})</p>
+          <p>Total Amount : ${priceHandler}</p>
+        </div>
+
+        <button className="btn-deafult" onClick={() => checkoutHandler()}>
+          Confirm Order
+        </button>
+      </div>
       </div>
     </div>
-
-    
   );
 };

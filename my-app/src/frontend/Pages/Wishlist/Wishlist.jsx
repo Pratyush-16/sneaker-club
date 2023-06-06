@@ -20,6 +20,12 @@ export const Wishlist = () => {
 
   return (
     <div>
+
+      {/* { state.wishlist.length ===0 ?(
+         <h1 className="title text-center"> Your WishList Is Empty </h1>
+      ): */}
+        <div>
+
       <h2 className="heading-center">My Wishlist {state.wishlist.length}</h2>
 
       <div className="wishlist-container">
@@ -61,6 +67,8 @@ export const Wishlist = () => {
           </div>
         ))}
       </div>
+   
+    </div>
     </div>
   );
 };
