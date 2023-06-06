@@ -1,11 +1,6 @@
 import "./Navbar.css";
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink ,Link, useNavigate} from "react-router-dom";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import  {faCartShopping} from "@fortawesome/free-regular-svg-icons"
-//import{ShoppingCartRoundedIcon} from "@mui/icons-material/ShoppingCartRounded"
-//import{FavoriteRoundedIcon} from "@mui/icons-material/FavoriteRounded"
-import {ShoppingCartOutlinedIcon} from '@mui/icons-material/ShoppingCartOutlined';
 import {BsCart2} from "react-icons/bs"
 import {AiOutlineHeart} from "react-icons/ai"
 import {AiOutlineUser} from "react-icons/ai"

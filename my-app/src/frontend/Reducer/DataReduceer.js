@@ -82,17 +82,17 @@ export const initialState = {
               }
 
 
-            // case "FILTER_CHANGE":{
-            //     //console.log(action.payLoaded,"hero)"
-            //     if(action.payLoad.FilterType === "categorySelected"){
-            //         const isSelectedAlready= state.filter.categorySelected.includes(action.payLoad.value);
-            //         if(!isSelectedAlready) 
-            //             return {...state, filter:{...state.filter,[action.payLoad.FilterType]:[...state.filter.categorySelected,action.payLoad.value]}
-            //         }
-            //         else return {...state, filter:{...state.filter,[action.payLoad.FilterType]:[...state.filter.categorySelected.filter((cat)=>cat!==action.payLoad.value),action.payLoad.value]}}
+            case "FILTER_CHANGE":{
+                //console.log(action.payLoaded,"hero)"
+                if(action.payLoad.FilterType === "categorySelected"){
+                    const isSelectedAlready= state.filter.categorySelected.includes(action.payLoad.value);
+                    if(!isSelectedAlready) 
+                        return {...state, filter:{...state.filter,[action.payLoad.FilterType]:[...state.filter.categorySelected,action.payLoad.value]}
+                    }
+                    else return {...state, filter:{...state.filter,[action.payLoad.FilterType]:[...state.filter.categorySelected.filter((cat)=>cat!==action.payLoad.value),action.payLoad.value]}}
                     
-            //   }
-            // }
+              }
+            }
 
           
       
