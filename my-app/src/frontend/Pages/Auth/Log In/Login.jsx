@@ -1,12 +1,14 @@
-
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Login.css";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
 import UserProfile from "../UserProfile";
+import { toast } from "react-toastify";
+import { DataContext } from "../../../Context/DataContext";
 
 export const Login = () => {
   const { loginHandler, token, logoutHandler } = useContext(AuthContext);
+  const{dispatch} = useContext(DataContext)
 
   const [userDetails, setUserDetails] = useState({
     email: "",
@@ -15,23 +17,16 @@ export const Login = () => {
 
   const guestUserDetails = {
     email: "pratyushsingh.1602@gmail.com",
-    password: "pratyush"
+    password: "pratyush",
   };
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   loginHandler(userDetails.email, userDetails.password);
-
-  // };
-
   const onClickHandler = () => {
     loginHandler(userDetails.email, userDetails.password);
     console.log("clicked");
   };
-
 
   useEffect(() => {
     if (token) {
@@ -39,14 +34,12 @@ export const Login = () => {
     }
   }, []);
 
-  console.log(loginHandler)
+  console.log(loginHandler);
 
- if(token) return(
-    <UserProfile/>
-  ) 
+  if (token) return <UserProfile />;
 
   return (
-    <form className="login" onSubmit={e => e.preventDefault()}>
+    <form className="login" onSubmit={(e) => e.preventDefault()}>
       <div className="main_login">
         <h1>Sneaker Club</h1>
         <p>Welcome! Sign In</p>
@@ -77,8 +70,9 @@ export const Login = () => {
 
         <button
           className="login-btn"
-          onClick={()=> loginHandler("pratyushsingh.1602@gmail.com","pratyush")} //api call, api-> mail,pass in body
-          
+          onClick={() =>
+            loginHandler("pratyushsingh.1602@gmail.com", "pratyush")
+          } 
         >
           Log In as Guest
         </button>

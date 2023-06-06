@@ -1,27 +1,23 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { DataContext } from "./DataContext";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const localStorageToken = JSON.parse(localStorage.getItem("login"));
 
-  //console.log(localStorageToken)
   const [token, setToken] = useState(localStorageToken?.token);
-  const localStorageUser = localStorageToken?.user
-  //console.log(localStorageUser)
+  const localStorageUser = localStorageToken?.user;
+  
   const [user, setUser] = useState(localStorageUser);
-
-  //console.log(token,"user")
 
   const login = (user) => {
     setUser(user);
   };
-  const navigate = useNavigate()
-
-
-  
+  const navigate = useNavigate();
 
   const signupHandler = async (firstName, lastName, email, password) => {
     try {
@@ -34,8 +30,8 @@ export const AuthContextProvider = ({ children }) => {
         email,
         password,
       });
-      
-      if (status === 201 || status ===200) {
+
+      if (status === 201 || status === 200) {
         localStorage.setItem(
           "login",
           JSON.stringify({
@@ -43,8 +39,7 @@ export const AuthContextProvider = ({ children }) => {
             user: createdUser,
           })
         );
-        console.log(createdUser)
-          console.log(encodedToken);
+        toast.success("LogIn In Successfull");
         setUser(createdUser);
         setToken(encodedToken);
       }
@@ -54,7 +49,7 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const loginHandler = async (email, password) => {
-    console.log("loginis clicked")
+    
     try {
       const {
         status,
@@ -63,9 +58,8 @@ export const AuthContextProvider = ({ children }) => {
         email,
         password,
       });
-     console.log(status,foundUser);
-    if (status === 201 || status ===200) {
-      
+      console.log(status, foundUser);
+      if (status === 201 || status === 200) {
         localStorage.setItem(
           "login",
           JSON.stringify({
@@ -77,24 +71,23 @@ export const AuthContextProvider = ({ children }) => {
         setToken(encodedToken);
         console.log(foundUser, encodedToken);
       }
-      navigate("/")
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
 
-
-   const logoutHandler = () => {
-    localStorage.removeItem('login');
+  const logoutHandler = () => {
+    localStorage.removeItem("login");
     setToken(false);
     setUser(false);
-    navigate('/login')
+    navigate("/login");
   };
 
-  //console.log(token)
-
   return (
-    <AuthContext.Provider value={{ token, user, login, logoutHandler, signupHandler,loginHandler }}>
+    <AuthContext.Provider
+      value={{ token, user, login, logoutHandler, signupHandler, loginHandler }}
+    >
       {children}
     </AuthContext.Provider>
   );
