@@ -6,12 +6,12 @@ export const CartPrice =(products)=> {
     const {state} = useContext(DataContext)
     const navigate = useNavigate()
 
-      // const priceHandler =()=> state?.cart.reduce((acc,curr)=> (acc+curr.original_price) * curr.qty ,0);
+      
 
     const priceHandler = state?.cart.reduce((acc, curr) => {
       return acc + (curr.original_price * curr.qty)
     } ,0)
-      //console.log(priceHandler ,"price")
+      
       console.log(state.cart)
 
     const totalAmount=0;

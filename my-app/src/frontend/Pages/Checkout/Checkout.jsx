@@ -3,6 +3,7 @@ import { DataContext } from "../../Context/DataContext";
 import { AuthContext } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { CartPrice } from "../Cart/CartPrice";
+import { billAmountHandle } from "../../Utils/cart";
 
 
 export const Checkout = () => {
@@ -16,7 +17,13 @@ export const Checkout = () => {
   const { tokens } = useContext(AuthContext);
   const [orderAddress, setOrderAddress] = useState(address[0]);
   
-  console.log(cart)
+const checkoutHandler =()=> {
+    
+}
+
+const priceHandler = state?.cart.reduce((acc, curr) => {
+    return acc + (curr.original_price * curr.qty)
+  } ,0)
 
   return (
     <div className="order-summary-container">
@@ -68,14 +75,19 @@ export const Checkout = () => {
                 <div className="order-price">
                     <h3>Price Details</h3>
                     <p>price({cart.length})</p>
+                    <p>Total Amount : ${priceHandler}</p>
                     
-                    <h3></h3>
+                    
                 </div>
+
+                
+                  <button className='btn-deafult' onClick={()=>checkoutHandler()}>Place Order</button>
+                
 
         </div>
       </div>
     </div>
 
-    // </div>
+    
   );
 };
