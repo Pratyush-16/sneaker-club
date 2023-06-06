@@ -81,11 +81,24 @@ export const initialState = {
                 price:200}}
               }
 
-          
-        
-    case "ADD_TO_CART" : 
-    return ({...state, cart:[...action.payload]});
 
+            // case "FILTER_CHANGE":{
+            //     //console.log(action.payLoaded,"hero)"
+            //     if(action.payLoad.FilterType === "categorySelected"){
+            //         const isSelectedAlready= state.filter.categorySelected.includes(action.payLoad.value);
+            //         if(!isSelectedAlready) 
+            //             return {...state, filter:{...state.filter,[action.payLoad.FilterType]:[...state.filter.categorySelected,action.payLoad.value]}
+            //         }
+            //         else return {...state, filter:{...state.filter,[action.payLoad.FilterType]:[...state.filter.categorySelected.filter((cat)=>cat!==action.payLoad.value),action.payLoad.value]}}
+                    
+            //   }
+            // }
+
+          
+      
+              case "ADD_TO_CART" : 
+              return ({...state, cart:[...action.payload]});
+                
 
     case "REMOVE_FROM-CART" :
         return({...state, cart:[...action.payload]})
@@ -109,8 +122,8 @@ export const initialState = {
                 console.log(action.payload)
                 return {...state, address:state.address.filter(({_id})=> _id!==action.payLoad) }  
 
-                case "UPDATE_ADDRESS":
-                    return {...state,address:state.address.map((add)=>add._id===action.payLoad._id?action.payLoad:add)};
+            case "UPDATE_ADDRESS":
+                return {...state,address:state.address.map((add)=>add._id===action.payLoad._id?action.payLoad:add)};
 
 
     default :{

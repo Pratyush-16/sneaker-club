@@ -16,11 +16,21 @@ export const Cart = () => {
   const { token } = useContext(AuthContext);
   const { state, dispatch } = useContext(DataContext);
 
+  console.log(state.cart,"cart")
+
   return (
+
+
     <div>
-      <h2 className="heading-center">My Cart {state.cart.length}</h2>
+
+      <div>
+       {/* {state.cart.length===0?<h1 className='title text-center'> Your Cart Is Empty </h1>: */}
+       
+      // <h2 className="heading-center">My Cart {state.cart.length}</h2>
 
       <div className="cart-container">
+        <h2 className="heading-center">My Cart {state.cart.length}</h2>
+        {/* {if(state.cart.length ===0 ?<h1>Your Cart is Empty</h1>)} */}
         {state.cart?.map((item) => (
           <div className="category-cardd">
             <div className="cart-prod-image">
@@ -76,6 +86,7 @@ export const Cart = () => {
       </div>
 
       <div></div>
+    </div>
     </div>
   );
 };

@@ -53,8 +53,8 @@ export const AllProduct = () => {
 
 
 
-            <button className="add-to-cart" onClick={()=> {isInCart(shoes._id) ? navigate('/cart') :  addToCart(shoes,token, dispatch)}}> { isInCart(shoes._id)? "goToCart" : "addToCart"} </button>
-            <button className="add-to-wishlist" onClick={() => {isInWishlist(shoes._id) ? navigate('/wishlist') : addToWishlist(shoes,token,dispatch)}}>{isInWishlist(shoes._id) ? "goToWishlist" : "addToWishlist"}</button>
+            <button className="add-to-cart" onClick={()=> {isInCart(shoes._id) ? navigate('/cart') :  addToCart(shoes,token, dispatch)}}> { isInCart(shoes._id)? "Go To Cart" : "Add To Cart"} </button>
+            <button className="add-to-wishlist" onClick={() => {isInWishlist(shoes._id) ? navigate('/wishlist') : addToWishlist(shoes,token,dispatch)}}>{isInWishlist(shoes._id) ? "Go To Wishlist" : "Add To Wishlist"}</button>
           </div>
         ))}
       </div>

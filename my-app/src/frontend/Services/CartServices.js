@@ -1,4 +1,7 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { TOAST_PARAMS } from "../Utils/utils";
 
 export const addToCart = async (product, token, dispatch) => {
   console.log("clicked", product, token);
@@ -14,7 +17,7 @@ export const addToCart = async (product, token, dispatch) => {
     );
 
     dispatch({ TYPE: "ADD_TO_CART", payload: response.data.cart });
-
+    toast.success("Added To Cart", TOAST_PARAMS);
     console.log(response);
   } catch (error) {
     console.error(error);
@@ -34,32 +37,36 @@ export const removeFromCart = async (productId, token, dispatch) => {
     console.log(response);
 
     dispatch({ TYPE: "REMOVE_FROM-CART", payload: response.data.cart });
+    toast.warn("Removed From cart", TOAST_PARAMS);
   } catch (error) {
     console.error(error);
   }
 };
 
-
-export const updateQuantityInCart = async(productId,token,dispatch,actionType) => {
+export const updateQuantityInCart = async (
+  productId,
+  token,
+  dispatch,
+  actionType
+) => {
   try {
-    const response=await axios.post(`/api/user/cart/${productId}`,
-    {
+    const response = await axios.post(
+      `/api/user/cart/${productId}`,
+      {
         action: {
-          type: actionType 
-        }
+          type: actionType,
+        },
       },
-    {
+      {
         headers: {
-        authorization: token
+          authorization: token,
+        },
       }
-    })
-    console.log(response,"updateQuantityInCart")
-    dispatch({TYPE:"UPDATE_QTY" , payload: response.data.cart})
+    );
+    console.log(response, "updateQuantityInCart");
+    dispatch({ TYPE: "UPDATE_QTY", payload: response.data.cart });
+    toast.success("Added one more Quantity", TOAST_PARAMS);
+  } catch (error) {
+    console.log(error);
   }
- 
-  catch(error){
-    console.log(error)
-  }
-  
-
-}
+};

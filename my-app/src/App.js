@@ -1,12 +1,9 @@
 import "./frontend/Pages/AllProduct/AllProduct.css"
-import Categories from "./frontend/Components/Cards/Categories";
-import { Footer } from "./frontend/Components/Footer/Footer";
-import { Hero } from "./frontend/Components/Hero/Hero";
+import 'react-toastify/dist/ReactToastify.css';
 import { Navbar } from "./frontend/Components/Navbar/Navbar";
-//import { PageRoutes } from "./frontend/Routes/PageRoutes";
+
 import { Routes, Route } from "react-router-dom";
 import {Home} from "./frontend/Pages/Home/Home"
-// import { AllProduct } from "./frontend/Pages/AllProduct";
 import { Cart } from "./frontend/Pages/Cart/Cart";
 import { Wishlist } from "./frontend/Pages/Wishlist/Wishlist";
 import { Login } from "./frontend/Pages/Auth/Log In/Login";
@@ -20,6 +17,7 @@ import UserProfile from "./frontend/Pages/Auth/UserProfile";
 import { SingleProduct } from "./frontend/Pages/SingleProduct/SingleProduct";
 import { NewAddress } from "./frontend/Pages/NewAddress/NewAddress";
 import { Checkout } from "./frontend/Pages/Checkout/Checkout";
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
@@ -45,7 +43,7 @@ function App() {
 
         </Routes>
       
-      
+      <ToastContainer/>
     </div>
   );
 }
