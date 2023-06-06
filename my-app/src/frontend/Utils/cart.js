@@ -1,4 +1,5 @@
-import { Cart } from "../Pages/Cart/Cart"
+
+
 
 
 export const isInCart =(productId,cart) =>{
@@ -6,6 +7,3 @@ export const isInCart =(productId,cart) =>{
 }
 
 
-// export const TotalcartAmount = (cart) => {
-//     return cart.reduce((acc,{original_price,discounted_price,qty}))
-// }

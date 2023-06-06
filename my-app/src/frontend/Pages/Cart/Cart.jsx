@@ -9,6 +9,8 @@ import {
   updateQuantityInCart,
 } from "../../Services/CartServices";
 import { CartPrice } from "./CartPrice";
+import { TOAST_PARAMS } from "../../Utils/utils";
+import { toast } from "react-toastify";
 
 // const cart = [nike, addidas, ]
 
@@ -43,16 +45,22 @@ export const Cart = () => {
 
               <p>Qty: {item.qty}</p>
               <button
-                onClick={() =>
+                onClick={() =>{
                   updateQuantityInCart(item._id, token, dispatch, "increment")
+                  toast.success("Added One More ", TOAST_PARAMS);
+                }
+                 
                 }
               >
                 +
               </button>
 
               <button
-                onClick={() =>
+                onClick={() => {
                   updateQuantityInCart(item._id, token, dispatch, "decrement")
+                  toast.success("Removed From Cart", TOAST_PARAMS);
+                }
+                 
                 }
                 disabled={item.qty === 1}
               >

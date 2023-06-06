@@ -65,7 +65,7 @@ export const updateQuantityInCart = async (
     );
     console.log(response, "updateQuantityInCart");
     dispatch({ TYPE: "UPDATE_QTY", payload: response.data.cart });
-    toast.success("Added one more Quantity", TOAST_PARAMS);
+    // toast.success("Added one more Quantity", TOAST_PARAMS);
   } catch (error) {
     console.log(error);
   }

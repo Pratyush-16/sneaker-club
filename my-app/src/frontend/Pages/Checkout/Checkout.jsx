@@ -4,6 +4,7 @@ import { AuthContext } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { CartPrice } from "../Cart/CartPrice";
 
+
 export const Checkout = () => {
   const navigate = useNavigate();
 
@@ -14,7 +15,7 @@ export const Checkout = () => {
   } = useContext(DataContext);
   const { tokens } = useContext(AuthContext);
   const [orderAddress, setOrderAddress] = useState(address[0]);
-  //const Bill = TotalcartAmount(cart)
+  
   console.log(cart)
 
   return (
@@ -58,11 +59,19 @@ export const Checkout = () => {
           
             {state.cart.map((item) => (
               <p className="ordered-items" key={item._id}>
-                {item.brand} {item.qty}
+               <span>{item.brand}</span>  <span>{item.qty}</span>
               </p>
             ))}
             
           </div>
+
+                <div className="order-price">
+                    <h3>Price Details</h3>
+                    <p>price({cart.length})</p>
+                    
+                    <h3></h3>
+                </div>
+
         </div>
       </div>
     </div>
