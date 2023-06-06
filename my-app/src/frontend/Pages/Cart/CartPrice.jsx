@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { DataContext } from "../../Context/DataContext";
 import { useNavigate } from "react-router-dom";
+import  "../Cart/CartPrice.css";
 
 export const CartPrice =(products)=> {
     const {state} = useContext(DataContext)
@@ -18,6 +19,7 @@ export const CartPrice =(products)=> {
     const deliveryPrice=0;
 
     return (
+
         <div className="cart-container-second">
           <h2>PRICE DETAILS</h2>
           <hr />
@@ -31,10 +33,10 @@ export const CartPrice =(products)=> {
             <p className="priceStyle">{deliveryPrice}</p>
           </div>
           <hr />
-          <div className="cart-container-second-first">
+          {/* <div className="cart-container-second-first">
             <p>Total Amount</p>
             <p className="priceStyle">{totalAmount}</p>
-          </div>
+          </div> */}
           <hr />
           <div className="save-line">
             {priceHandler >= 1000 ? (

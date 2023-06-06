@@ -15,7 +15,7 @@ export const Navbar = () => {
   const navigate =useNavigate()
 
   useEffect(()=> {
-    dispatch({TYPE:"FILTER_CHANGE",payload:{action:"searchvalue",value:searchText.trim()}})
+    dispatch({TYPE:"FILTER_CHANGE",payload:{FilterType:"searchvalue",value:searchText.trim()}})
 
     if(searchText.trim().length > 0) {
       navigate('/allproducts')
