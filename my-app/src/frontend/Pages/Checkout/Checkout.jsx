@@ -7,6 +7,7 @@ import { CartPrice } from "../Cart/CartPrice";
 export const Checkout = () => {
   const navigate = useNavigate();
 
+  const {state} = useContext(DataContext)
   const {
     state: { address, cart },
     dispatch,
@@ -55,7 +56,7 @@ export const Checkout = () => {
             </div>
 
           
-            {cart?.map((item) => (
+            {state.cart.map((item) => (
               <p className="ordered-items" key={item._id}>
                 {item.brand} {item.qty}
               </p>

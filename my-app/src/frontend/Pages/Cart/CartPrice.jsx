@@ -8,6 +8,9 @@ export const CartPrice =(products)=> {
 
     const priceHandler = state?.cart.reduce((acc,curr)=> curr.original_price * curr.qty +acc,0)
 
+    const totalAmount=0;
+    const deliveryPrice=0;
+
     return (
         <div className="cart-container-second">
           <h2>PRICE DETAILS</h2>
@@ -16,10 +19,7 @@ export const CartPrice =(products)=> {
             <p>Price</p>
             <p className="priceStyle">{priceHandler}</p>
           </div>
-          {/* <div className="cart-container-second-first">
-            <p>Discount</p>
-            <p className="priceStyle">{discountHandler}</p>
-          </div>
+          
           <div className="cart-container-second-first">
             <p>Delivery Charges</p>
             <p className="priceStyle">{deliveryPrice}</p>
@@ -28,7 +28,7 @@ export const CartPrice =(products)=> {
           <div className="cart-container-second-first">
             <p>Total Amount</p>
             <p className="priceStyle">{totalAmount}</p>
-          </div> */}
+          </div>
           <hr />
           <div className="save-line">
             {priceHandler >= 1000 ? (

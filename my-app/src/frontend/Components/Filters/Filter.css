@@ -72,6 +72,23 @@ legend{
   font-weight: bold;
   margin: 0;
 }
+.filter-second {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-second > div{
+  display: flex;
+}
+
+.filter-second > div:first-child{
+  justify-content: space-between;
+}
+
+.filter-second > div:nth-child(2){
+  gap: 0.5rem;
+}
 
 .filter-second input[type="range"] {
   width: 100%;
