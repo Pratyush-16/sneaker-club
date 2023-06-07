@@ -25,7 +25,7 @@ export const Cart = () => {
       {state.cart.length === 0 ? (
         <div className="">
           <h1 className="title text-center"> Your Cart Is Empty </h1>
-          <button onClick={() => navigate("/allproduct")}>
+          <button className="button-GoToShopping" onClick={() => navigate("/allproduct")}>
             Go To Shopping
           </button>
         </div>
