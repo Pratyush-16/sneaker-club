@@ -76,7 +76,7 @@ export const Checkout = () => {
           <p>Total Amount : ${priceHandler}</p>
         </div>
 
-        <button className="btn-deafult" onClick={() => checkoutHandler()}>
+        <button className="btn-confirm-order" onClick={() => checkoutHandler()}>
           Confirm Order
         </button>
       </div>

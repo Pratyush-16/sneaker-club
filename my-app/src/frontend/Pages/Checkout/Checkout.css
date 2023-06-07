@@ -11,3 +11,33 @@
     /* display: flex; */
 
 }
+
+.btn-address {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-address:hover {
+    background-color: #0056b3;
+  }
+
+  .btn-confirm-order{
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-confirm-order:hover {
+    background-color: #0056b3;
+  }
