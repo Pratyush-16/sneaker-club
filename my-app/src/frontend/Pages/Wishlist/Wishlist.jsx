@@ -6,11 +6,13 @@ import { addToCart, updateQuantityInCart } from "../../Services/CartServices";
 import { isInCart } from "../../Utils/cart";
 import { TOAST_PARAMS } from "../../Utils/utils";
 import {toast} from "react-toastify"
+import { useNavigate } from "react-router-dom";
 
 export const Wishlist = () => {
-  // const {wishlist , setWishlist} = useContext(DataContext)
+  
   const { token } = useContext(AuthContext);
   const { state, dispatch } = useContext(DataContext);
+  const navigate = useNavigate();
 
   const isInCart = (idToFind) => {
     const cartfind = state.cart.find(({ _id }) => _id === idToFind);
@@ -20,10 +22,15 @@ export const Wishlist = () => {
 
   return (
     <div>
+      {
 
-      {/* { state.wishlist.length ===0 ?(
+        state.wishlist.length ===0 ?(
+          <div>
          <h1 className="title text-center"> Your WishList Is Empty </h1>
-      ): */}
+         <button onClick={()=>navigate('/allproduct') }>Go To Shopping</button>
+         </div>
+      ):(
+      
         <div>
 
       <h2 className="heading-center">My Wishlist {state.wishlist.length}</h2>
@@ -67,8 +74,9 @@ export const Wishlist = () => {
           </div>
         ))}
       </div>
-   
+     
     </div>
+  )}
     </div>
   );
 };
