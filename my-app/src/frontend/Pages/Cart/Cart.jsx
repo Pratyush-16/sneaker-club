@@ -31,8 +31,7 @@ export const Cart = () => {
         </div>
       ) : (
         <div className="main-cart-container">
-          {/* <h2 className="heading-center">My Cart {state.cart.length}</h2> */}
-
+         
           <div className="cart-container">
             <h2 className="heading-center">My Cart {state.cart.length}</h2>
     
@@ -47,6 +46,8 @@ export const Cart = () => {
                   <p>Price: ${item.original_price}</p>
 
                   <p>Qty: {item.qty}</p>
+
+                  <div className="button-increment-decrement">
                   <button
                     onClick={() => {
                       updateQuantityInCart(
@@ -76,7 +77,10 @@ export const Cart = () => {
                     {" "}
                     -{" "}
                   </button>
+                  </div>
 
+
+                    <div className="button-cart-wishlist-main">
                   <div className="button-cart">
                     <button
                       className="cart-Btn"
@@ -85,7 +89,7 @@ export const Cart = () => {
                       Remove from Cart
                     </button>
                     <button
-                      className="cart-Btn"
+                      className="button-wishlist"
                       onClick={() => {
                         addToWishlist(item, token, dispatch);
                         removeFromCart(item._id, token, dispatch);
@@ -93,6 +97,7 @@ export const Cart = () => {
                     >
                       Add to Wishlist
                     </button>
+                  </div>
                   </div>
                 </div>
               </div>
