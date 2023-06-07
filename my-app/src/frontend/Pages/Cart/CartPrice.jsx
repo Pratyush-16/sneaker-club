@@ -33,18 +33,9 @@ export const CartPrice =(products)=> {
             <p className="priceStyle">{deliveryPrice}</p>
           </div>
           <hr />
-          {/* <div className="cart-container-second-first">
-            <p>Total Amount</p>
-            <p className="priceStyle">{totalAmount}</p>
-          </div> */}
+         
           <hr />
-          <div className="save-line">
-            {priceHandler >= 1000 ? (
-              <p>You will save Rs. 200 on this order</p>
-            ) : (
-              <p>Please make cart value above Rs. 1000 To Avail the discount</p>
-            )}
-          </div>
+          
           <div className="button-placeorder">
           <button className="placeOrderButton" onClick={()=> navigate('/checkout')} >Place Order</button>
           </div>

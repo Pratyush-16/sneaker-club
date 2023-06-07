@@ -79,9 +79,7 @@ export const Login = () => {
         >
           Log In as Guest
         </button>
-        {/* <button className="logout-btn" onClick={() => logoutHandler()}>
-          Log Out
-        </button> */}
+        
       </div>
 
       <div className="login-newperson">
