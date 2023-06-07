@@ -3,10 +3,12 @@ import { DataContext } from "../../Context/DataContext";
 import { AuthContext } from "../../Context/AuthContext";
 import { removeFromWishlist } from "../../Services/WishlistServices";
 import { addToCart, updateQuantityInCart } from "../../Services/CartServices";
-import { isInCart } from "../../Utils/cart";
+
 import { TOAST_PARAMS } from "../../Utils/utils";
 import {toast} from "react-toastify"
 import { useNavigate } from "react-router-dom";
+
+import "../Wishlist/Wishlist.css"
 
 export const Wishlist = () => {
   
@@ -27,13 +29,13 @@ export const Wishlist = () => {
         state.wishlist.length ===0 ?(
           <div>
          <h1 className="title text-center"> Your WishList Is Empty </h1>
-         <button onClick={()=>navigate('/allproduct') }>Go To Shopping</button>
+         <button className="Button-GoToShopping" onClick={()=>navigate('/allproduct') }>Go To Shopping</button>
          </div>
       ):(
       
         <div>
 
-      <h2 className="heading-center">My Wishlist {state.wishlist.length}</h2>
+      <h2 className="heading-center">My Wishlist ({state.wishlist.length})</h2>
 
       <div className="wishlist-container">
         {state.wishlist?.map((item) => (
@@ -55,6 +57,7 @@ export const Wishlist = () => {
                 </button>
 
                 <button
+                className="add-to-cart-button"
                   onClick={() => {
                     isInCart(item._id)
                       ? updateQuantityInCart(

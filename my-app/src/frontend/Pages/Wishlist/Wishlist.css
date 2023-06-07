@@ -1,0 +1,33 @@
+.Button-GoToShopping{
+    padding: 10px 20px;
+  font-size: 16px;
+   line-height: 1.5;
+  border: none;
+  border-radius: 5px;
+  background-color: #ede4e4;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+}
+
+.button-wishlist button {
+  padding: 10px 20px;
+  font-size: 16px;
+   line-height: 1.5;
+  border: none;
+  border-radius: 5px;
+  background-color: #ede4e4;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-wishlist button:hover {
+    background-color: #c7bdbd;
+  }
+
+  .add-to-cart-button {
+  margin-left: 10px;
+  margin-top: 5px;
+}
