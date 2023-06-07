@@ -13,7 +13,7 @@ import  Mockman  from "mockman-js";
 import { PrivateRoutes } from "./frontend/Routes/PrivateRoutes";
 
 import "./App.css"
-import UserProfile from "./frontend/Pages/Auth/UserProfile";
+import UserProfile from "./frontend/Pages/UserProfile/UserProfile";
 import { SingleProduct } from "./frontend/Pages/SingleProduct/SingleProduct";
 import { NewAddress } from "./frontend/Pages/NewAddress/NewAddress";
 import { Checkout } from "./frontend/Pages/Checkout/Checkout";

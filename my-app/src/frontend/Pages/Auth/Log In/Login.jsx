@@ -2,7 +2,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Login.css";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../../Context/AuthContext";
-import UserProfile from "../UserProfile";
+import UserProfile from "../../UserProfile/UserProfile";
 import { toast } from "react-toastify";
 import { DataContext } from "../../../Context/DataContext";
 
