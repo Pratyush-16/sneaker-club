@@ -8,7 +8,7 @@ export const Footer = () => {
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <p>Copyright &copy; 2023 Sneaker Store. All rights reserved.</p>
+                <p>Designed & Developed by Pratyush</p>
               </div>
             </div>
           </div>

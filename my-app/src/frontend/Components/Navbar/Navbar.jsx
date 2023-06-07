@@ -10,17 +10,15 @@ import { DataContext } from "../../Context/DataContext";
 export const Navbar = () => {
 
   const{token} = useContext(AuthContext)
-  const[searchText,setSearchText] = useState("")
-  const{state:{filter},dispatch} =useContext(DataContext)
+  //const[searchText,setSearchText] = useState("")
+  const{state,dispatch} =useContext(DataContext)
   const navigate =useNavigate()
 
-  useEffect(()=> {
-    dispatch({TYPE:"FILTER_CHANGE",payload:{FilterType:"searchvalue",value:searchText.trim()}})
 
-    if(searchText.trim().length > 0) {
-      navigate('/allproducts')
-    }
-  },[searchText])
+  
+  const setSearchText = (searchText) => {
+    dispatch({ type: 'SET_SEARCH_TEXT', payload: searchText });
+  };
 
 
   return (
@@ -32,7 +30,7 @@ export const Navbar = () => {
 
         <div className="navigation-search">
           
-        <input className="search-navbar" name="search-value"  value={filter.search}  type="text" placeholder="search items" 
+        <input className="search-navbar" name="search-value"  value={state.search}  type="text" placeholder="search items" 
         onChange={(e)=>setSearchText(e.target.value)}/>
         </div>
       
@@ -44,8 +42,7 @@ export const Navbar = () => {
         <NavLink to="/cart"><BsCart2/></NavLink>
         <NavLink to="/wishlist"><AiOutlineHeart/> </NavLink>
         <NavLink to= {`${token ? "/userprofile" : "/login"}`}><AiOutlineUser/></NavLink>
-        {/* <NavLink to="/signup">SignUp</NavLink> */}
-
+        
 
 
         

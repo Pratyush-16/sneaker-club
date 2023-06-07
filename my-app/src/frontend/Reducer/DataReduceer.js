@@ -81,6 +81,14 @@ export const initialState = {
                 price:200}}
               }
 
+              case 'SET_SEARCH_TEXT':
+                 return {
+                  ...state,
+                  search: action.payload,
+                 filteredItems: (action.payload),
+                };
+        
+
 
             // case "FILTER_CHANGE":{
             //     //console.log(action.payLoaded,"hero)"
