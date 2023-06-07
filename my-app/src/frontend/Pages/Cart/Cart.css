@@ -15,6 +15,16 @@
     width: 500px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+.button-increment-decrement button {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ede4e4;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
 .button-cart-wishlist-main {
     display: flex;
