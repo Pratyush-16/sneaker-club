@@ -43,11 +43,12 @@ export const Login = () => {
       <div className="main_login">
         <h1>Sneaker Club</h1>
         <p>Welcome! Sign In</p>
-      </div>
+     
 
       <div className="login-after-signin">
+        <div className="login">
         <input
-          placeholder="Email"
+          placeholder="pratyushsingh.1602@gmail.com"
           className="login-ip"
           type="email"
           onChange={(e) =>
@@ -58,10 +59,12 @@ export const Login = () => {
           placeholder="Password"
           className="login-ip"
           type="password"
+          placeholder ="*******"
           onChange={(e) =>
             setUserDetails({ ...userDetails, password: e.target.value })
           }
         />
+        </div>
       </div>
       <div>
         <button className="login-btn" onClick={onClickHandler}>
@@ -76,9 +79,9 @@ export const Login = () => {
         >
           Log In as Guest
         </button>
-        <button className="logout-btn" onClick={() => logoutHandler()}>
+        {/* <button className="logout-btn" onClick={() => logoutHandler()}>
           Log Out
-        </button>
+        </button> */}
       </div>
 
       <div className="login-newperson">
@@ -88,6 +91,7 @@ export const Login = () => {
             Sign Up Here
           </Link>
         </p>
+      </div>
       </div>
     </form>
   );
