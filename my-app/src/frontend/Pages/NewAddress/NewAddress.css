@@ -1,0 +1,28 @@
+.address-input-container input {
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.address-input-container input::placeholder {
+    color: #999;
+  }
+
+  .address-input-container input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+
+  .address-input-container input[type="number"]::-webkit-inner-spin-button,
+.address-input-container input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.address-input-container input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+

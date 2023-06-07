@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 as uuid} from "uuid";
 import { DataContext } from "../../Context/DataContext";
+import "../NewAddress/NewAddress.css"
 
 export const NewAddress = () => {
 
@@ -33,7 +34,7 @@ export const NewAddress = () => {
 
   return (
     <div className="signup-container">
-      <button onClick={() => navigate(-1)}>Go Back</button>
+      <button className="button-go-back" onClick={() => navigate(-1)}>Go Back</button>
       <div className="signup-details">
         <h5>Add New Address</h5>
 
@@ -44,7 +45,7 @@ export const NewAddress = () => {
             setAddress({...add})}}>Edit</button>
         </div>) }
 
-
+          <div className="address-input-container">
         <input
           name="Name"
           value={address.Name}
@@ -94,6 +95,7 @@ export const NewAddress = () => {
           placeholder="Enter Phone No"
           onChange={(e) => formHandler(e)}
         />
+        </div>
 
         <div>
           <button
