@@ -45,7 +45,9 @@ export const CartPrice =(products)=> {
               <p>Please make cart value above Rs. 1000 To Avail the discount</p>
             )}
           </div>
+          <div className="button-placeorder">
           <button className="placeOrderButton" onClick={()=> navigate('/checkout')} >Place Order</button>
+          </div>
         </div>
       );
       
